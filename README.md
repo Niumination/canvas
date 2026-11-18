@@ -46,8 +46,9 @@ Visualisasi 3D wilayah Kabupaten Aceh Tengah (gaya Google Earth, satu file HTML)
 **Yang diuji**: performa kamera orbit/pastel terrain di file tunggal, kontrol navigasi, keterbacaan label lokasi.
 **Belinya untuk ProofForge**: fondasi *3D State-Space Viewer* — kamera, lighting, dan ergonomi navigasi yang sama dipakai saat menggambar entitas (`entities[]`) & *safety sphere* (`constraints_overlay[]`).
 
-### (Berikutnya) E-001 — Timeline Scrubber deterministik
-Memutar `SceneTimelineFrame[]` (lihat [`pendamping/KONTRAK-DATA.md`](./pendamping/KONTRAK-DATA.md)) dengan time scrubber `[0..T]`, frame merah pada `is_violation: true`, toggle before/after. **Sesuai kontrak §4.3 — nol perubahan skema.**
+### ✅ E-001 — Timeline Scrubber deterministik — `experiments/e001-timeline-scrubber.html`
+Memutar `SceneTimelineFrame[]` (kontrak §4.3) dengan time scrubber `[0..T]`, frame merah pada `is_violation: true`, dan toggle **Before (bug) / After (patch)**.
+Angka memakai kalibrasi terverifikasi Skenario A (`v_A=14.4`, `v_B=13.9`, `latency=0.25s`, `R_safe=1.5m`): buggy → `SAT_VIOLATION` tepat **tick 42 (t=4.2s, dist 0.38m)**; patched → `UNSAT_PROVEN` (min dist 10 m, trigger pengereman t=1.54s). Panel kanan menampilkan `VerificationResult` (§4.2) & log `SSEStreamEvent` (§4.4).
 
 ### (Berikutnya) E-002 — Drone Swarm toy sim (Skenario A)
 Simulasi linier `drone_swarm` dari [`pendamping/Z3-SCENARIO-MATH-SPECS.md`](./pendamping/Z3-SCENARIO-MATH-SPECS.md) versi deterministik (rumus posisi & counterexample demo yang sudah dispesifikasikan), dengan overlay `safety_sphere` yang `breached` saat TABRAK.

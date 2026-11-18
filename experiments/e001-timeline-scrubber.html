@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-001 — Timeline Scrubber · SceneTimelineFrame (Canvas Lab)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; background: #09090b; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  input[type=range] { accent-color: #ef4444; }
+  .flash { animation: flash 0.35s ease-in-out infinite alternate; }
+  @keyframes flash { from { opacity: 0; } to { opacity: 1; } }
+  .chip { @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-bold; }
+</style>
+</head>
+<body class="text-zinc-200 overflow-hidden">
+
+<!-- peringatan pelanggaran (overlay merah) -->
+<div id="vignette" class="fixed inset-0 pointer-events-none z-40 opacity-0"
+     style="box-shadow: inset 0 0 180px 60px rgba(239,68,68,.55);"></div>
+
+<div class="h-screen flex flex-col">
+
+  <!-- ============ HEADER ============ -->
+  <header class="flex items-center gap-3 px-4 py-2 border-b border-zinc-800 bg-zinc-950/90">
+    <h1 class="text-sm font-extrabold tracking-tight text-zinc-100">E-001 · Timeline Scrubber
+      <span class="text-zinc-500 font-normal">— <code class="mono text-[11px] text-cyan-400">SceneTimelineFrame[]</code> sesuai <a class="underline hover:text-cyan-300" href="https://github.com/Niumination/canvas/blob/master/pendamping/KONTRAK-DATA.md">KONTRAK-DATA.md §4.3</a></span>
+    </h1>
+    <div class="ml-auto flex items-center gap-2 text-xs">
+      <span id="modeChip" class="chip bg-red-500/15 text-red-400 border border-red-500/40">BEFORE · BUG (SAT)</span>
+      <button id="btnMode" class="px-3 py-1.5 rounded bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 font-semibold">⇄ After / Fix (UNSAT)</button>
+      <button id="btnPlay" class="px-3 py-1.5 rounded bg-cyan-600 hover:bg-cyan-500 text-white font-semibold w-20">❚❚ Pause</button>
+      <select id="selSpeed" class="bg-zinc-800 border border-zinc-700 rounded px-2 py-1.5">
+        <option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option>
+      </select>
+      <button id="btnFocus" class="px-3 py-1.5 rounded bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 font-semibold">🎯 Fokus t=4.2s</button>
+    </div>
+  </header>
+
+  <div class="flex-1 flex min-h-0">
+
+    <!-- ============ VIEWPORT 3D ============ -->
+    <main class="relative flex-1">
+      <div id="viewport" class="absolute inset-0"></div>
+      <div id="banner" class="hidden absolute top-4 left-1/2 -translate-x-1/2 z-50 px-5 py-2.5 rounded-lg
+                              bg-red-600/90 text-white text-sm font-extrabold shadow-2xl">
+        ⚠ SAT_VIOLATION · <span class="mono">min_pairwise_distance &ge; 1.50m</span> dilanggar
+      </div>
+    </main>
+
+    <!-- ============ PANEL KANAN ============ -->
+    <aside class="w-96 shrink-0 border-l border-zinc-800 bg-zinc-950/90 flex flex-col min-h-0">
+
+      <!-- VerificationResult (kontrak §4.2) -->
+      <section class="p-3 border-b border-zinc-800">
+        <h2 class="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-2">VerificationResult · kontrak §4.2</h2>
+        <div id="vrCard" class="rounded-lg border border-zinc-700 bg-zinc-900 p-3 mono text-[11px] leading-relaxed"></div>
+      </section>
+
+      <!-- log SSE -->
+      <section class="p-3 border-b border-zinc-800">
+        <h2 class="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-2">SSEStreamEvent · kontrak §4.4</h2>
+        <ul id="sseLog" class="space-y-1 mono text-[11px]"></ul>
+      </section>
+
+      <!-- frame JSON -->
+      <section class="p-3 flex-1 min-h-0 flex flex-col">
+        <h2 class="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-2">Frame aktif (JSON)</h2>
+        <pre id="frameJson" class="flex-1 overflow-auto mono text-[10px] leading-relaxed bg-zinc-900 border border-zinc-800 rounded-lg p-3 text-zinc-400"></pre>
+      </section>
+    </aside>
+  </div>
+
+  <!-- ============ SCRUBBER ============ -->
+  <footer class="px-4 py-3 border-t border-zinc-800 bg-zinc-950/90">
+    <div class="flex items-center gap-3">
+      <span id="lblTick" class="mono text-xs text-zinc-400 w-40">tick 000 · t 0.0s</span>
+      <input id="scrub" type="range" min="0" max="100" value="0" step="1" class="flex-1">
+      <span id="lblDist" class="mono text-xs w-72 text-right">‖p_A − p_B‖ = -- m · butuh &ge; 1.50 m</span>
+    </div>
+    <div id="track" class="relative h-1.5 mt-1 mx-40 rounded-full bg-zinc-800 overflow-hidden">
+      <div id="violationZone" class="absolute h-full bg-red-600/70" style="display:none"></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+/* =====================================================================
+   E-001 — Timeline Scrubber (Canvas Lab · spin-off eksperimen ProofForge 3D)
+   Sumber angka & rumus: pendamping/Z3-SCENARIO-MATH-SPECS.md · Skenario A (drone_swarm)
+   Kontrak output      : pendamping/KONTRAK-DATA.md · §4.3 SceneTimelineFrame
+   ===================================================================== */
+
+// ---------- konstanta terkunci (dari Z3-SCENARIO-MATH-SPECS.md) ----------
+const DT = 0.1;            // tick dt = 0.1 s
+const N  = 101;            // horizon 10 s → tick 0..100
+const T0 = 4.2;            // t₀ kalibrasi (detik) — momen closest approach
+const V_A = 14.4, V_B = 13.9;   // m/s (counterexample demo)
+const LATENCY = 0.25;      // s (comm_delay_ms = 250)
+const A_MAX = 3.0;         // m/s² batas deselerasi
+const R_SAFE = 1.50;       // m — TERKUNCI (invariants_locked.py)
+const LAT_OFF = 0.38;      // m offset lateral lintasan
+// required_gap fix-mode: R_safe + (vA+vB)·lat + (vA²+vB²)/(2·a_max)
+const REQUIRED_GAP = R_SAFE + (V_A + V_B) * LATENCY + (V_A * V_A + V_B * V_B) / (2 * A_MAX); // ≈ 75.3 m
+const D0 = V_B * T0;       // 58.38 m — spawn B dari origin (gap awal 118.86 m)
+
+// ---------- generator timeline (deterministik, sesuai kontrak §4.3) ----------
+function buildTimeline(fixed) {
+  const frames = [];
+  // profil kecepatan
+  const vAt = [], vBt = [];
+  const TRIG = (D0 + V_A * T0 - REQUIRED_GAP) / (V_A + V_B); // t trigger braking (fix mode): gap awal 118.86 m
+  for (let k = 0; k < N; k++) {
+    const t = k * DT;
+    if (!fixed) { vAt.push(V_A); vBt.push(V_B); continue; }
+    // dynamic stopping-envelope braking: keduanya mengerem a_max setelah trigger, berhenti di 0
+    vAt.push(Math.max(0, V_A - (t > TRIG ? A_MAX * (t - TRIG) : 0)));
+    vBt.push(Math.max(0, V_B - (t > TRIG ? A_MAX * (t - TRIG) : 0)));
+  }
+  // integrasi posisi (rumus linier saat belum braking, sesuai spek)
+  let sA = 0, sB = 0;
+  for (let k = 0; k < N; k++) {
+    const t = k * DT;
+    if (k > 0) { sA += vAt[k] * DT; sB += vBt[k] * DT; }
+    // p_A naik +Y dari −(D0−D0) ... gunakan kerangka: A di y=−75+sA, B di y=75−sB? —
+    // kerangka final (kalibrasi spek): A mulai −60.48, B mulai +58.38, saling mendekat head-on.
+    const pA = { x: 0.00, y: -V_A * T0 + sA };
+    const pB = { x: LAT_OFF, y: D0 - sB };
+    const dist = Math.hypot(pA.x - pB.x, pA.y - pB.y);
+    const violation = dist < R_SAFE;
+    frames.push({
+      tick: k, time_sec: +t.toFixed(1), is_violation: violation,
+      entities: [
+        { id: "drone-alpha", kind: "quadrotor", position: [pA.x, 0.6, pA.y], rotation_euler: [0, 0, 0], velocity: [0, 0, vAt[k]], status: violation ? "COLLISION" : "OK" },
+        { id: "drone-beta",  kind: "quadrotor", position: [pB.x, 0.6, pB.y], rotation_euler: [0, Math.PI, 0], velocity: [0, 0, -vBt[k]], status: violation ? "COLLISION" : "OK" }
+      ],
+      constraints_overlay: [
+        { type: "safety_sphere", center: [pA.x, 0.6, pA.y], radius: R_SAFE, breached: violation },
+        { type: "safety_sphere", center: [pB.x, 0.6, pB.y], radius: R_SAFE, breached: violation }
+      ]
+    });
+  }
+  return frames;
+}
+
+// ---------- VerificationResult (kontrak §4.2) ----------
+function buildResult(fixed) {
+  if (!fixed) {
+    return {
+      iteration: 1, status: "SAT_VIOLATION", invariant_hash_valid: true,
+      violated_invariant: "min_pairwise_distance >= 1.50m",
+      counterexample_inputs: { drone_a_speed: 14.4, drone_b_speed: 13.9, comm_delay_ms: 250 },
+      violated_tick: 42, violated_time_sec: 4.2, solver_duration_ms: 184,
+      min_distance_m: 0.38
+    };
+  }
+  const tl = buildTimeline(true);
+  const minD = Math.min(...tl.map(f =>
+    Math.hypot(f.entities[0].position[0] - f.entities[1].position[0],
+               f.entities[0].position[2] - f.entities[1].position[2])));
+  return {
+    iteration: 2, status: "UNSAT_PROVEN", invariant_hash_valid: true,
+    violated_invariant: null, counterexample_inputs: null,
+    violated_tick: null, violated_time_sec: null, solver_duration_ms: 97,
+    min_distance_m: +minD.toFixed(2),
+    note: "patch: dynamic stopping-envelope braking (required_gap ≈ " + REQUIRED_GAP.toFixed(1) + " m)"
+  };
+}
+
+function buildSSE(fixed) {
+  return fixed ? [
+    ["STAGE_CHANGED", "PATCH → COMPLETE · patch diterapkan (iterasi 2)"],
+    ["VERIFICATION_RESULT", "UNSAT_PROVEN · semua invariant terpenuhi · PROVEN_SAFE"],
+    ["PATCH_DIFF", "system_impl.py: naive latency → stopping-envelope braking"]
+  ] : [
+    ["STAGE_CHANGED", "VERIFY · Z3 solver berjalan di sandbox"],
+    ["VERIFICATION_RESULT", "SAT_VIOLATION · tick 42 (t=4.2s) · dist 0.38m < 1.50m"],
+    ["HOOK_AUDIT", "ALLOW · hash invariants_locked.py valid (SHA-256 cocok)"]
+  ];
+}
+
+// ---------- state ----------
+let fixed = false;
+let timeline = buildTimeline(false);
+let result = buildResult(false);
+let tick = 0, playing = true, speed = 1, accum = 0;
+
+// ---------- three.js ----------
+const vp = document.getElementById("viewport");
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x09090b);
+scene.fog = new THREE.Fog(0x09090b, 60, 220);
+
+const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 1000);
+camera.position.set(12, 9, -14);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+vp.appendChild(renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+scene.add(new THREE.GridHelper(400, 80, 0x27272a, 0x18181b));
+
+// penanda invarian: garis lintasan masing-masing drone (digambar ulang tiap ganti mode)
+const trajGroup = new THREE.Group(); scene.add(trajGroup);
+function drawTrajectories() {
+  while (trajGroup.children.length) trajGroup.remove(trajGroup.children[0]);
+  [[0, 0x22d3ee], [LAT_OFF, 0xf59e0b]].forEach(([x, col]) => {
+    const pts = [];
+    const fr = timeline;
+    // garis: proyeksi lintasan (pakai posisi entitas per tick)
+    fr.forEach(f => { const p = f.entities.find(e => Math.abs(e.position[0] - x) < 0.01); pts.push(new THREE.Vector3(p.position[0], 0.05, p.position[2])); });
+    const g = new THREE.BufferGeometry().setFromPoints(pts);
+    const m = new THREE.LineBasicMaterial({ color: col, transparent: true, opacity: 0.25 });
+    trajGroup.add(new THREE.Line(g, m));
+  });
+}
+
+// drone = body + 4 rotor
+function makeDrone(colorHex) {
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.14, 0.5),
+                              new THREE.MeshStandardMaterial({ color: colorHex, emissive: colorHex, emissiveIntensity: 0.35 }));
+  g.add(body);
+  g.rotors = [];
+  [[-0.28, -0.28], [0.28, -0.28], [-0.28, 0.28], [0.28, 0.28]].forEach(([dx, dz]) => {
+    const r = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.16, 0.02, 16),
+                             new THREE.MeshStandardMaterial({ color: 0xd4d4d8, transparent: true, opacity: 0.65 }));
+    r.position.set(dx, 0.09, dz); g.add(r); g.rotors.push(r);
+  });
+  const arrow = new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), new THREE.Vector3(0, 0.25, 0), 1.6, colorHex, 0.45, 0.28);
+  g.add(arrow); g.arrow = arrow;
+  scene.add(g);
+  return g;
+}
+const droneA = makeDrone(0x22d3ee), droneB = makeDrone(0xf59e0b);
+
+// safety sphere (constraints_overlay)
+function makeSphere() {
+  const m = new THREE.Mesh(new THREE.SphereGeometry(R_SAFE, 20, 14),
+    new THREE.MeshBasicMaterial({ color: 0x22c55e, wireframe: true, transparent: true, opacity: 0.35 }));
+  scene.add(m); return m;
+}
+const sphereA = makeSphere(), sphereB = makeSphere();
+
+// ---------- render loop ----------
+const scrub = document.getElementById("scrub");
+let lastT = performance.now();
+
+function applyFrame() {
+  const f = timeline[tick];
+  f.entities.forEach((e, i) => {
+    const d = i === 0 ? droneA : droneB;
+    d.position.set(e.position[0], e.position[1], e.position[2]);
+    d.rotation.y = e.rotation_euler[1];
+    d.arrow.setLength(Math.max(0.6, e.velocity[2] * 0.12), 0.45, 0.28);
+    d.arrow.visible = Math.abs(e.velocity[2]) > 0.01;
+    d.arrow.setDirection(new THREE.Vector3(0, 0, Math.sign(e.velocity[2] || 1)));
+    d.rotors.forEach(r => r.rotation.y += Math.abs(e.velocity[2]) * 0.4 + 0.3);
+  });
+  const breached = f.is_violation;
+  [sphereA, sphereB].forEach((s, i) => {
+    const c = f.constraints_overlay[i].center;
+    s.position.set(c[0], c[1], c[2]);
+    s.material.color.setHex(breached ? 0xef4444 : 0x22c55e);
+    s.material.opacity = breached ? 0.6 : 0.3;
+  });
+  // HUD
+  const dist = Math.hypot(f.entities[0].position[0] - f.entities[1].position[0],
+                          f.entities[0].position[2] - f.entities[1].position[2]);
+  document.getElementById("lblTick").textContent = `tick ${String(f.tick).padStart(3, "0")} · t ${f.time_sec.toFixed(1)}s`;
+  const lbl = document.getElementById("lblDist");
+  lbl.textContent = `‖p_A − p_B‖ = ${dist.toFixed(2)} m · butuh ≥ ${R_SAFE.toFixed(2)} m`;
+  lbl.className = `mono text-xs w-72 text-right ${breached ? "text-red-400 font-bold" : "text-zinc-400"}`;
+  document.getElementById("vignette").classList.toggle("flash", breached);
+  document.getElementById("vignette").style.opacity = breached ? 1 : 0;
+  document.getElementById("banner").classList.toggle("hidden", !breached);
+  scrub.value = tick;
+  document.getElementById("frameJson").textContent = JSON.stringify(f, null, 1);
+  // kamera mengikuti titik tengah pasangan
+  const mid = new THREE.Vector3((f.entities[0].position[0] + f.entities[1].position[0]) / 2, 1,
+                                (f.entities[0].position[2] + f.entities[1].position[2]) / 2);
+  controls.target.lerp(mid, 0.08);
+}
+
+function loop(now) {
+  const dtMs = now - lastT; lastT = now;
+  if (playing) {
+    accum += dtMs * speed;
+    while (accum >= DT * 1000) {
+      accum -= DT * 1000;
+      tick = (tick + 1) % timeline.length;
+      applyFrame();
+    }
+  }
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+
+function resize() {
+  const w = vp.clientWidth, h = vp.clientHeight;
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+}
+window.addEventListener("resize", resize); resize();
+
+// ---------- panel & kontrol ----------
+function renderPanels() {
+  const r = result;
+  const ok = r.status === "UNSAT_PROVEN";
+  document.getElementById("vrCard").innerHTML =
+    `<div class="grid grid-cols-[120px_1fr] gap-x-2 gap-y-1">
+       <span class="text-zinc-500">status</span><span class="${ok ? "text-emerald-400" : "text-red-400"} font-bold">${r.status}</span>
+       <span class="text-zinc-500">iteration</span><span class="text-zinc-300">${r.iteration}</span>
+       <span class="text-zinc-500">invariant</span><span class="text-zinc-300">${r.violated_invariant ?? "— (semua terpenuhi)"}</span>
+       <span class="text-zinc-500">min dist</span><span class="${ok ? "text-emerald-300" : "text-red-300"}">${r.min_distance_m} m</span>
+       <span class="text-zinc-500">cex inputs</span><span class="text-zinc-300">${r.counterexample_inputs ? JSON.stringify(r.counterexample_inputs) : "—"}</span>
+       <span class="text-zinc-500">solver</span><span class="text-zinc-300">${r.solver_duration_ms} ms</span>
+     </div>`;
+  document.getElementById("sseLog").innerHTML =
+    buildSSE(fixed).map(([ev, msg]) =>
+      `<li><span class="text-cyan-400">${ev}</span> <span class="text-zinc-400">${msg}</span></li>`).join("");
+  const chip = document.getElementById("modeChip");
+  chip.textContent = fixed ? "AFTER · PATCHED (UNSAT)" : "BEFORE · BUG (SAT)";
+  chip.className = `chip border ${fixed ? "bg-emerald-500/15 text-emerald-400 border-emerald-500/40" : "bg-red-500/15 text-red-400 border-red-500/40"}`;
+}
+
+// zona merah di track scrubber (rentang tick pelanggaran)
+function renderViolationZone() {
+  const zs = timeline.map((f, i) => f.is_violation ? i : -1).filter(i => i >= 0);
+  const zone = document.getElementById("violationZone");
+  if (!zs.length) { zone.style.display = "none"; return; }
+  const a = Math.min(...zs), b = Math.max(...zs);
+  zone.style.display = "block";
+  zone.style.left = (a / (N - 1) * 100) + "%";
+  zone.style.width = ((b - a + 1) / (N - 1) * 100) + "%";
+}
+
+function reload(mode) {
+  fixed = mode;
+  timeline = buildTimeline(fixed);
+  result = buildResult(fixed);
+  tick = 0;
+  drawTrajectories();
+  renderPanels();
+  renderViolationZone();
+  applyFrame();
+}
+
+// events
+document.getElementById("btnMode").onclick = () => reload(!fixed);
+document.getElementById("btnPlay").onclick = e => {
+  playing = !playing;
+  e.target.textContent = playing ? "❚❚ Pause" : "▶ Play";
+};
+document.getElementById("selSpeed").onchange = e => speed = +e.target.value;
+scrub.oninput = e => { tick = +e.target.value; applyFrame(); };
+document.getElementById("btnFocus").onclick = () => {
+  tick = 42; applyFrame();
+  camera.position.set(4.5, 3.5, timeline[42].entities[0].position[2] - 4);
+};
+
+// go
+reload(false);
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
