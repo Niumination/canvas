@@ -148,44 +148,51 @@
                     <h1 class="font-bold text-xs md:text-base tracking-wide text-white whitespace-nowrap">KABUPATEN ACEH TENGAH <span class="text-cyan-400">3D EARTH</span></h1>
                     <span class="px-2 py-0.5 text-[9px] md:text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 rounded-full animate-pulse whitespace-nowrap">TAKENGON DIGITAL TWIN</span>
                 </div>
-                <p class="subtitle-text text-[11px] text-slate-300">Danau Lut Tawar • Dataran Tinggi Gayo (1.250 mdpl) • AI Governance</p>
+                <p class="subtitle-text text-[11px] text-slate-300">Bupati Drs. Haili Yoga, M.Si. & Wabup Muchsin Hasan, M.SP. • 1.230–2.930 mdpl</p>
             </div>
         </div>
 
-        <!-- City KPI Metrics -->
-        <div class="header-kpi glass-panel rounded-2xl px-3.5 py-2 flex flex-wrap items-center gap-3 md:gap-6 pointer-events-auto text-xs">
-            <div class="flex items-center gap-1.5">
+        <!-- City KPI Metrics (Data Resmi LKjIP 2024, BPS & RKPD 2025) -->
+        <div class="header-kpi glass-panel rounded-2xl px-3.5 py-2 flex flex-wrap items-center gap-3 md:gap-5 pointer-events-auto text-xs">
+            <div class="flex items-center gap-1.5" title="Swarm Bot Agents Aktif">
                 <i class="fa-solid fa-robot text-cyan-400 text-xs md:text-sm"></i>
                 <div>
                     <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">Gov-Bots</div>
-                    <div class="font-mono font-bold text-cyan-300 text-[11px] md:text-xs" id="stat-bots">180 / 500</div>
+                    <div class="font-mono font-bold text-cyan-300 text-[11px] md:text-xs" id="stat-bots">220 / 500</div>
                 </div>
             </div>
-            <div class="flex items-center gap-1.5">
-                <i class="fa-solid fa-building text-purple-400 text-xs md:text-sm"></i>
+            <div class="flex items-center gap-1.5" title="Indeks Pembangunan Manusia (BPS 2024)">
+                <i class="fa-solid fa-graduation-cap text-purple-400 text-xs md:text-sm"></i>
                 <div>
-                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">Infrastruktur</div>
-                    <div class="font-mono font-bold text-purple-300 text-[11px] md:text-xs" id="stat-buildings">15 Unit</div>
+                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">IPM (2024)</div>
+                    <div class="font-mono font-bold text-purple-300 text-[11px] md:text-xs" id="stat-ipm">77.27</div>
                 </div>
             </div>
-            <div class="flex items-center gap-1.5">
-                <i class="fa-solid fa-seedling text-emerald-400 text-xs md:text-sm"></i>
+            <div class="flex items-center gap-1.5" title="Indeks Sistem Pemerintahan Berbasis Elektronik (Target 4.0)">
+                <i class="fa-solid fa-server text-sky-400 text-xs md:text-sm"></i>
                 <div>
-                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">Indeks Hijau</div>
-                    <div class="font-mono font-bold text-emerald-300 text-[11px] md:text-xs" id="stat-eco">86%</div>
+                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">Indeks SPBE</div>
+                    <div class="font-mono font-bold text-sky-300 text-[11px] md:text-xs" id="stat-spbe">1.88 <span class="text-[9px] text-slate-400">/ 4.0</span></div>
                 </div>
             </div>
-            <div class="flex items-center gap-1.5">
-                <i class="fa-solid fa-coins text-amber-400 text-xs md:text-sm"></i>
+            <div class="flex items-center gap-1.5" title="Produksi Kopi Arabika Gayo (48.300 Ha)">
+                <i class="fa-solid fa-mug-hot text-amber-400 text-xs md:text-sm"></i>
                 <div>
-                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">APBD Daerah</div>
-                    <div class="font-mono font-bold text-amber-300 text-[11px] md:text-xs" id="stat-budget">Rp 2.65 T</div>
+                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">Kopi Arabika</div>
+                    <div class="font-mono font-bold text-amber-300 text-[11px] md:text-xs" id="stat-coffee">37.008 Ton</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-1.5" title="Indeks Kualitas Lingkungan Hidup (IKLH)">
+                <i class="fa-solid fa-leaf text-emerald-400 text-xs md:text-sm"></i>
+                <div>
+                    <div class="text-[9px] md:text-[10px] text-slate-400 uppercase leading-none">IKLH / Miskin</div>
+                    <div class="font-mono font-bold text-emerald-300 text-[11px] md:text-xs"><span id="stat-iklh">79.2</span> • <span id="stat-poverty" class="text-rose-300">14.27%</span></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Left Panel: Master AI Platform & Visi Misi Bupati Aceh Tengah -->
+    <!-- Left Panel: Master AI Platform & Visi Misi Bupati Aceh Tengah (2025-2030) -->
     <aside id="left-panel" class="fixed top-28 md:top-20 left-3 z-20 w-[calc(100vw-24px)] sm:w-80 md:w-96 max-h-[calc(100vh-140px)] flex flex-col gap-2 pointer-events-none">
         
         <!-- Toggle Button for Mobile -->
@@ -193,115 +200,141 @@
             <span><i class="fa-solid fa-sliders mr-1.5"></i> Panel Kontrol Master AI</span>
         </button>
 
-        <div id="panel-content" class="flex flex-col gap-3 overflow-y-auto pr-1 pointer-events-auto">
+        <div id="panel-content" class="flex flex-col gap-2.5 overflow-y-auto pr-1 pointer-events-auto">
             <!-- Visi Misi Bupati/Wali Kota Card -->
-            <div class="glass-panel rounded-2xl p-4">
-                <div class="flex items-center justify-between mb-2">
+            <div class="glass-panel rounded-2xl p-3.5">
+                <div class="flex items-center justify-between mb-1.5">
                     <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
-                        <i class="fa-solid fa-landmark"></i> Visi Misi Bupati Aceh Tengah
+                        <i class="fa-solid fa-landmark"></i> Visi Misi 2025–2030
                     </h2>
-                    <span class="text-[10px] font-mono text-slate-400">TAKENGON-OS</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">SAPA-OS v2.6</span>
                 </div>
 
-                <!-- Preset Visi Selector -->
-                <label class="block text-[11px] text-slate-300 mb-1">Pilih Fokus Kebijakan Strategis:</label>
-                <select id="vision-preset" class="w-full bg-slate-900/90 border border-cyan-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 mb-2.5">
-                    <option value="smart_green">🌊 Konservasi Danau Lut Tawar & Ekowisata Gayo</option>
-                    <option value="agro_maritime">☕ Hilirisasi Kopi Arabika Gayo & Agroteknologi</option>
-                    <option value="tech_hub">📡 Smart City Takengon & Konektivitas Dataran Tinggi</option>
-                    <option value="public_welfare">🏥 Pemerataan Infrastruktur & RSUD Datu Beru</option>
+                <!-- Visi Resmi Banner -->
+                <div class="bg-slate-900/80 border border-emerald-500/30 rounded-xl p-2 mb-2.5">
+                    <div class="text-[10px] text-emerald-400 font-semibold uppercase tracking-wider">Visi Kepala Daerah:</div>
+                    <div class="text-xs font-bold text-white italic">"Aceh Tengah Islami, Maju, Sejahtera, dan Berkeadilan"</div>
+                    <div class="text-[10px] text-slate-400 mt-0.5">Bupati: Drs. Haili Yoga, M.Si. • Wabup: Muchsin Hasan, M.SP.</div>
+                </div>
+
+                <!-- Preset Program Unggulan (Quick Wins) -->
+                <label class="block text-[11px] text-slate-300 mb-1">3 Program Unggulan (Quick Wins RPJMD/RKPD):</label>
+                <select id="vision-preset" class="w-full bg-slate-900/90 border border-cyan-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 mb-2">
+                    <option value="sapa_digital">📡 P1: Portal SAPA (Satu Pintu Akses Data) & SPBE</option>
+                    <option value="kopi_gayo">☕ P2: Hilirisasi Kopi Arabika Gayo & Petani Milenial</option>
+                    <option value="ekowisata_danau">🌊 P3: Ekowisata Danau Lut Tawar & Mitigasi Bencana</option>
+                    <option value="kesra_stunting">🏥 Misi Sosial: Penurunan Stunting (19,2%) & Kemiskinan</option>
                 </select>
 
                 <!-- Custom Visi Misi Input -->
-                <textarea id="vision-input" rows="2" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 resize-none mb-2.5" placeholder="Tulis instruksi khusus visi misi Bupati Aceh Tengah...">Mewujudkan Kabupaten Aceh Tengah yang maju, lestari, dan sejahtera berbasis ekowisata Danau Lut Tawar serta hilirisasi Kopi Arabika Gayo berkelas dunia.</textarea>
+                <textarea id="vision-input" rows="2" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl p-2 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 resize-none mb-2" placeholder="Instruksi kebijakan RPJMD 2025-2029...">Integrasi Satu Data OPD melalui Portal SAPA Command Center Diskominfo untuk mendongkrak Indeks SPBE dari 1,88 menuju target 4,00 dan pelayanan publik prima.</textarea>
 
                 <!-- Execute AI Directive Button -->
-                <button id="btn-execute-vision" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs shadow-lg cyber-glow transition-all flex items-center justify-center gap-2 cursor-pointer">
+                <button id="btn-execute-vision" class="w-full py-2 px-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs shadow-lg cyber-glow transition-all flex items-center justify-center gap-2 cursor-pointer">
                     <i class="fa-solid fa-brain"></i>
                     <span>ORKESTRASI MASTER AI & EKSEKUSI BOT</span>
                 </button>
             </div>
 
             <!-- Master AI Swarm Controller -->
-            <div class="glass-panel rounded-2xl p-4">
-                <div class="flex items-center justify-between mb-2">
+            <div class="glass-panel rounded-2xl p-3.5">
+                <div class="flex items-center justify-between mb-1.5">
                     <h2 class="text-xs font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
-                        <i class="fa-solid fa-network-wired"></i> Swarm Bot Agents (10 - 500 Bots)
+                        <i class="fa-solid fa-network-wired"></i> Swarm Bot Agents (14 Kec / 295 Gampong)
                     </h2>
-                    <span id="bot-count-badge" class="text-xs font-mono font-bold text-cyan-300">180 Bots</span>
+                    <span id="bot-count-badge" class="text-xs font-mono font-bold text-cyan-300">220 Bots</span>
                 </div>
 
-                <input type="range" id="bot-slider" min="20" max="500" step="10" value="180" class="w-full accent-cyan-400 cursor-pointer mb-3">
+                <input type="range" id="bot-slider" min="20" max="500" step="10" value="220" class="w-full accent-cyan-400 cursor-pointer mb-2.5">
 
                 <!-- Bot Division Legend & Status -->
-                <div class="grid grid-cols-2 gap-2 text-[11px]">
-                    <div class="bg-slate-900/70 border border-amber-500/30 rounded-xl p-2 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b]"></span>
+                <div class="grid grid-cols-2 gap-1.5 text-[11px]">
+                    <div class="bg-slate-900/70 border border-amber-500/30 rounded-xl p-1.5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_#f59e0b] shrink-0"></span>
                         <div>
-                            <div class="font-semibold text-amber-300">Dinas PUPR & Jalan</div>
-                            <div class="text-[10px] text-slate-400" id="count-builder">45 Bots</div>
+                            <div class="font-semibold text-amber-300">PUPR & Dishub</div>
+                            <div class="text-[10px] text-slate-400" id="count-builder">55 Bots</div>
                         </div>
                     </div>
-                    <div class="bg-slate-900/70 border border-emerald-500/30 rounded-xl p-2 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]"></span>
+                    <div class="bg-slate-900/70 border border-emerald-500/30 rounded-xl p-1.5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981] shrink-0"></span>
                         <div>
                             <div class="font-semibold text-emerald-300">DLH & Lut Tawar</div>
-                            <div class="text-[10px] text-slate-400" id="count-eco">45 Bots</div>
+                            <div class="text-[10px] text-slate-400" id="count-eco">55 Bots</div>
                         </div>
                     </div>
-                    <div class="bg-slate-900/70 border border-cyan-500/30 rounded-xl p-2 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff]"></span>
+                    <div class="bg-slate-900/70 border border-cyan-500/30 rounded-xl p-1.5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#00f0ff] shrink-0"></span>
                         <div>
-                            <div class="font-semibold text-cyan-300">Diskominfo & Kopi</div>
-                            <div class="text-[10px] text-slate-400" id="count-service">45 Bots</div>
+                            <div class="font-semibold text-cyan-300">SAPA & Kopi Gayo</div>
+                            <div class="text-[10px] text-slate-400" id="count-service">55 Bots</div>
                         </div>
                     </div>
-                    <div class="bg-slate-900/70 border border-purple-500/30 rounded-xl p-2 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-purple-400 shadow-[0_0_8px_#9d4edd]"></span>
+                    <div class="bg-slate-900/70 border border-purple-500/30 rounded-xl p-1.5 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-purple-400 shadow-[0_0_8px_#9d4edd] shrink-0"></span>
                         <div>
-                            <div class="font-semibold text-purple-300">Satpol-AI & Energi</div>
-                            <div class="text-[10px] text-slate-400" id="count-security">45 Bots</div>
+                            <div class="font-semibold text-purple-300">Satpol-AI & Syariat</div>
+                            <div class="text-[10px] text-slate-400" id="count-security">55 Bots</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Live Master AI Command Feed -->
-            <div class="glass-panel rounded-2xl p-3.5">
-                <div class="flex items-center justify-between mb-2">
+            <div class="glass-panel rounded-2xl p-3">
+                <div class="flex items-center justify-between mb-1.5">
                     <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
-                        <i class="fa-solid fa-terminal text-cyan-400"></i> Log Sistem Digital Twin
+                        <i class="fa-solid fa-terminal text-cyan-400"></i> Telemetri Portal SAPA & OPD
                     </h3>
                     <span id="ai-thinking-indicator" class="hidden text-[10px] font-mono text-cyan-400 animate-pulse">
-                        <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Gemini AI Berpikir...
+                        <i class="fa-solid fa-circle-notch fa-spin mr-1"></i>Gemini AI...
                     </span>
                 </div>
-                <div id="ai-log-container" class="h-28 overflow-y-auto space-y-1.5 font-mono text-[11px] pr-1">
-                    <div class="text-cyan-300">[GOOGLE-EARTH] Model 3D topografi Dataran Tinggi Gayo & Danau Lut Tawar aktif.</div>
-                    <div class="text-slate-300">[GOV-AI] Mensinkronkan 180 bot agents otonom di wilayah Takengon.</div>
-                    <div class="text-emerald-400">[DLH-BOT] Pemantauan kualitas air Danau Lut Tawar & Hutan Pinus berjalan optimal.</div>
+                <div id="ai-log-container" class="h-24 overflow-y-auto space-y-1 font-mono text-[10.5px] pr-1">
+                    <div class="text-cyan-300">[OSM-GEO] Proyeksi Danau Lut Tawar (5.742,10 ha, 1.230 mdpl) & Takengon aktif.</div>
+                    <div class="text-emerald-300">[LKjIP-2024] Capaian Pemkab 108% (A). Pertumbuhan Ekonomi 4,98%, NTP 181,56.</div>
+                    <div class="text-amber-300">[KOPI-GAYO] 48.300 ha Arabika & CV. Oro Kopi Gayo (Mongal) terhubung ke rantai pasok.</div>
                 </div>
             </div>
         </div>
     </aside>
 
-    <!-- Bottom Camera & Quick Action Controls -->
-    <div class="bottom-bar fixed bottom-3 left-1/2 -translate-x-1/2 z-20 glass-panel rounded-2xl px-3 py-2 flex items-center gap-2 pointer-events-auto max-w-[96vw] overflow-x-auto">
-        <button id="cam-earth" class="px-3 py-1.5 rounded-xl bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/30 transition flex items-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-globe"></i> Satelit Orbit
+    <!-- Landmark Info Floating Card (Muncul saat klik/pilih landmark nyata) -->
+    <div id="landmark-card" class="hidden fixed top-20 right-3 z-20 glass-panel rounded-2xl p-3.5 w-72 pointer-events-auto border-emerald-400/40">
+        <div class="flex items-start justify-between gap-2">
+            <div>
+                <span id="lm-badge" class="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">VERIFIED OSM</span>
+                <h3 id="lm-title" class="text-xs font-bold text-white mt-1">Kantor Bupati Aceh Tengah</h3>
+            </div>
+            <button id="close-lm-btn" class="text-slate-400 hover:text-white text-xs p-1"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="lm-coords" class="text-[10px] font-mono text-cyan-300 mt-1">4.6218°N, 96.8457°E • 1.258 mdpl</div>
+        <p id="lm-desc" class="text-[11px] text-slate-300 mt-1.5 leading-relaxed">Jl. Kol. Yos Sudarso No. 1, Tansaril, Kec. Lut Tawar. Pusat koordinasi 14 Kecamatan & 295 Gampong.</p>
+    </div>
+
+    <!-- Bottom Camera & Landmark Navigation Bar -->
+    <div class="bottom-bar fixed bottom-3 left-1/2 -translate-x-1/2 z-20 glass-panel rounded-2xl px-3 py-2 flex items-center gap-1.5 pointer-events-auto max-w-[96vw] overflow-x-auto">
+        <button id="cam-earth" class="px-2.5 py-1.5 rounded-xl bg-cyan-500/20 border border-cyan-400/50 text-cyan-300 text-xs font-semibold hover:bg-cyan-500/30 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-globe"></i> Orbit Gayo
         </button>
-        <button id="cam-takengon" class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-city"></i> Kota Takengon
+        <button id="cam-bupati" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-landmark"></i> Kantor Bupati
         </button>
-        <button id="cam-lake" class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-water"></i> Danau Lut Tawar
+        <button id="cam-lake" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-water"></i> Lut Tawar
         </button>
-        <button id="cam-pantan" class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-mountain"></i> Bukit Gayo
+        <button id="cam-pantan" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-mountain"></i> Pantan Terong
         </button>
-        <div class="h-5 w-[1px] bg-slate-700 mx-1"></div>
-        <button id="btn-boost-build" class="px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-semibold hover:bg-amber-500/30 transition flex items-center gap-1.5 whitespace-nowrap">
-            <i class="fa-solid fa-bolt"></i> Percepat 3x
+        <button id="cam-burni" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-volcano"></i> Burni Telong
+        </button>
+        <button id="cam-kopi" class="px-2.5 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-400/50 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-mug-hot"></i> Sentra Kopi
+        </button>
+        <div class="h-5 w-[1px] bg-slate-700 mx-0.5"></div>
+        <button id="btn-boost-build" class="px-2.5 py-1.5 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-semibold hover:bg-amber-500/30 transition flex items-center gap-1.5 whitespace-nowrap">
+            <i class="fa-solid fa-bolt"></i> 3x
         </button>
     </div>
 
@@ -310,29 +343,87 @@
         <div class="flex items-start gap-2.5">
             <i class="fa-solid fa-satellite text-cyan-400 text-base mt-0.5"></i>
             <div>
-                <div class="font-bold text-cyan-300" id="toast-title">Digital Twin Disinkronkan</div>
-                <div class="text-slate-300 mt-0.5" id="toast-desc">Bot agents sedang merealisasikan kebijakan.</div>
+                <div class="font-bold text-cyan-300" id="toast-title">Portal SAPA Disinkronkan</div>
+                <div class="text-slate-300 mt-0.5" id="toast-desc">Bot agents sedang merealisasikan kebijakan RPJMD.</div>
             </div>
         </div>
     </div>
 
     <script>
         /**
-         * KABUPATEN ACEH TENGAH 3D DIGITAL TWIN (GOOGLE EARTH STYLE)
-         * Menggunakan Three.js dengan topografi pegunungan Bukit Barisan, Danau Lut Tawar, 
-         * Takengon City, dan Swarm Bot Governance.
+         * PAYLOAD DATA SPESIFIKASI NYATA KABUPATEN ACEH TENGAH (2025–2030)
+         * Audit & Sinkronisasi: BPS Aceh Tengah Dalam Angka 2024, LKjIP 2024, RKPD 2025, OSM & Wikidata
          */
+        const ACEH_TENGAH_DATA = {
+            wilayah: {
+                nama: "Kabupaten Aceh Tengah",
+                ibukota: "Takengon",
+                luas_km2: 4527.58,
+                kecamatan: 14,
+                gampong: 295
+            },
+            danau_lut_tawar: {
+                pusat: { lat: 4.6112, lon: 96.9267 },
+                bbox_osm: { lat_min: 4.5795, lat_max: 4.6428, lon_min: 96.8499, lon_max: 96.9967 },
+                orientasi: "Barat–Timur, condong Tenggara",
+                luas_ha: 5742.10,
+                panjang_maks_km: 15.727,
+                lebar_maks_km: 4.563,
+                kedalaman_maks_m: 84.23,
+                elevasi_m_dpl: 1230
+            },
+            gunung: [
+                { nama: "Burni Telong", lat: 4.7667, lon: 96.8219, tinggi_m: 2624, status: "Stratovolcano (kini Kab. Bener Meriah, ±17 km Utara Takengon)", verified: true },
+                { nama: "Burni Klieten", lat: 4.5522, lon: 96.9574, tinggi_m: 2930, status: "[U] Puncak tertinggi Kab. Aceh Tengah (versi lain 2.640 m, Kec. Bintang)", verified: false }
+            ],
+            kpi: {
+                penduduk_miskin_pct: 14.27,
+                ipm: 77.27,
+                rasio_gini: 0.332,
+                tpt_pct: 4.20,
+                pertumbuhan_ekonomi_pct: 4.98,
+                spbe: 1.88,
+                stunting_pct: 19.2,
+                iklh: 79.2,
+                kunjungan_wisatawan: 1173202,
+                produksi_kopi_ton_2023: 37008
+            },
+            visi: "Aceh Tengah Islami, Maju, Sejahtera, dan Berkeadilan",
+            bupati: "Drs. Haili Yoga, M.Si.",
+            wakil_bupati: "Muchsin Hasan, M.SP."
+        };
+
+        /**
+         * PROYEKSI KOORDINAT GEOGRAFIS (LAT/LON) KE WORLD SPACE 3D (X, Z)
+         * Pusat referensi: 4.6150°N, 96.9000°E
+         * Kompresi non-linear untuk puncak jauh (Burni Telong 4.7667°N) agar tetap masuk dalam viewport 300x300
+         */
+        function geoToWorld(lat, lon) {
+            const refLat = 4.6150;
+            const refLon = 96.9000;
+            const dLat = lat - refLat;
+            const dLon = lon - refLon;
+            // Kompresi halus untuk jarak > 0.08 derajat agar Gunung Burni Telong & Abong-Abong terlihat utuh di horizon
+            const compressLat = Math.abs(dLat) > 0.08 ? Math.sign(dLat) * (0.08 + (Math.abs(dLat) - 0.08) * 0.45) : dLat;
+            const x = dLon * 460;
+            const z = -compressLat * 540;
+            return { x, z };
+        }
 
         const state = {
-            botCount: 180,
+            botCount: 220,
             maxBots: 500,
-            buildingsCount: 15,
-            ecoIndex: 86,
-            budget: 2.65,
+            buildingsCount: 16,
+            ipm: ACEH_TENGAH_DATA.kpi.ipm,
+            spbe: ACEH_TENGAH_DATA.kpi.spbe,
+            iklh: ACEH_TENGAH_DATA.kpi.iklh,
+            poverty: ACEH_TENGAH_DATA.kpi.penduduk_miskin_pct,
+            coffeeTon: ACEH_TENGAH_DATA.kpi.produksi_kopi_ton_2023,
             buildSpeed: 1,
             cameraMode: 'orbit',
-            currentTheme: 'smart_green',
-            visionText: "Mewujudkan Kabupaten Aceh Tengah yang maju, lestari, dan sejahtera berbasis ekowisata Danau Lut Tawar serta hilirisasi Kopi Arabika Gayo berkelas dunia."
+            cameraTarget: new THREE.Vector3(4, 2, 0),
+            currentTheme: 'sapa_digital',
+            visionText: "Integrasi Satu Data OPD melalui Portal SAPA Command Center Diskominfo untuk mendongkrak Indeks SPBE dari 1,88 menuju target 4,00 dan pelayanan publik prima."
         };
 
         const container = document.getElementById('canvas-container');
@@ -340,9 +431,6 @@
         const botSlider = document.getElementById('bot-slider');
         const botCountBadge = document.getElementById('bot-count-badge');
         const statBots = document.getElementById('stat-bots');
-        const statBuildings = document.getElementById('stat-buildings');
-        const statEco = document.getElementById('stat-eco');
-        const statBudget = document.getElementById('stat-budget');
 
         function addLog(tag, message, colorClass = 'text-slate-300') {
             const div = document.createElement('div');
@@ -351,7 +439,7 @@
             div.innerHTML = `<span class="text-slate-500">[${time}]</span> <strong>[${tag}]</strong> ${message}`;
             logContainer.appendChild(div);
             logContainer.scrollTop = logContainer.scrollHeight;
-            if (logContainer.children.length > 40) {
+            if (logContainer.children.length > 45) {
                 logContainer.removeChild(logContainer.firstChild);
             }
         }
@@ -365,31 +453,42 @@
             window.toastTimer = setTimeout(() => toast.classList.add('hidden'), 4500);
         }
 
-        // --- TEKSTUR PROSEDURAL BANGUNAN & JALAN (MIRIP GOOGLE EARTH 3D) ---
+        function showLandmarkInfo(title, coords, desc, isVerified = true) {
+            const card = document.getElementById('landmark-card');
+            const badge = document.getElementById('lm-badge');
+            document.getElementById('lm-title').textContent = title;
+            document.getElementById('lm-coords').textContent = coords;
+            document.getElementById('lm-desc').textContent = desc;
+
+            if (isVerified) {
+                badge.textContent = "VERIFIED OSM / PEMKAB";
+                badge.className = "text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+            } else {
+                badge.textContent = "[U] ESTIMASI / KONFLIK DATA";
+                badge.className = "text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30";
+            }
+            card.classList.remove('hidden');
+        }
+
+        document.getElementById('close-lm-btn').addEventListener('click', () => {
+            document.getElementById('landmark-card').classList.add('hidden');
+        });
+
+        // --- TEKSTUR PROSEDURAL BANGUNAN & JALAN ---
         function createBuildingTexture(accentHex, hasWindows = true) {
             const canvas = document.createElement('canvas');
             canvas.width = 128;
             canvas.height = 256;
             const ctx = canvas.getContext('2d');
-            
-            // Background fasad gedung
             ctx.fillStyle = '#0f172a';
             ctx.fillRect(0, 0, 128, 256);
-
-            // Aksen garis vertikal arsitektural
             ctx.fillStyle = '#1e293b';
-            for (let i = 0; i < 128; i += 16) {
-                ctx.fillRect(i, 0, 3, 256);
-            }
-
+            for (let i = 0; i < 128; i += 16) ctx.fillRect(i, 0, 3, 256);
             if (hasWindows) {
-                // Jendela kaca bercahaya
                 ctx.fillStyle = accentHex;
                 for (let y = 14; y < 246; y += 22) {
                     for (let x = 10; x < 118; x += 18) {
-                        if (Math.random() > 0.15) {
-                            ctx.fillRect(x, y, 10, 12);
-                        }
+                        if (Math.random() > 0.15) ctx.fillRect(x, y, 10, 12);
                     }
                 }
             }
@@ -401,45 +500,42 @@
             canvas.width = 64;
             canvas.height = 64;
             const ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#1e293b'; // Aspal gelap
+            ctx.fillStyle = '#1e293b';
             ctx.fillRect(0, 0, 64, 64);
-            ctx.fillStyle = '#f8fafc'; // Garis marka putih tengah
+            ctx.fillStyle = '#f8fafc';
             ctx.fillRect(30, 0, 4, 24);
             ctx.fillRect(30, 40, 4, 24);
             return new THREE.CanvasTexture(canvas);
         }
 
-        // --- INISIALISASI THREE.JS & SATELLITE SCENE ---
+        // --- INISIALISASI THREE.JS ---
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x030712);
-        scene.fog = new THREE.FogExp2(0x0f172a, 0.0038);
+        scene.fog = new THREE.FogExp2(0x0f172a, 0.0028);
 
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 900);
-        camera.position.set(-60, 52, 70);
-        camera.lookAt(4, 2, 0);
-
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.2;
+        renderer.toneMappingExposure = 1.24;
         container.appendChild(renderer.domElement);
 
-        // --- PENCAHAYAAN ATMOSFERIK DATARAN TINGGI (SATELLITE VIEW) ---
-        const hemiLight = new THREE.HemisphereLight(0xe0f2fe, 0x064e3b, 1.35);
-        hemiLight.position.set(0, 120, 0);
+        // --- PENCAHAYAAN ATMOSFERIK DATARAN TINGGI GAYO (20.1°C) ---
+        const hemiLight = new THREE.HemisphereLight(0xe0f2fe, 0x064e3b, 1.4);
+        hemiLight.position.set(0, 140, 0);
         scene.add(hemiLight);
 
-        const dirLight = new THREE.DirectionalLight(0xfffbeb, 2.5);
-        dirLight.position.set(70, 100, 60);
+        const dirLight = new THREE.DirectionalLight(0xfffbeb, 2.55);
+        dirLight.position.set(75, 110, 65);
         dirLight.castShadow = true;
         dirLight.shadow.mapSize.width = 2048;
         dirLight.shadow.mapSize.height = 2048;
         dirLight.shadow.camera.near = 10;
-        dirLight.shadow.camera.far = 260;
-        const d = 95;
+        dirLight.shadow.camera.far = 300;
+        const d = 120;
         dirLight.shadow.camera.left = -d;
         dirLight.shadow.camera.right = d;
         dirLight.shadow.camera.top = d;
@@ -447,69 +543,93 @@
         dirLight.shadow.bias = -0.0004;
         scene.add(dirLight);
 
-        // --- ATMOSFER LANGIT KUBAH ---
-        const skyGeo = new THREE.SphereGeometry(380, 32, 20);
+        // --- LANGIT KUBAH ---
+        const skyGeo = new THREE.SphereGeometry(440, 32, 20);
         const skyCanvas = document.createElement('canvas');
         skyCanvas.width = 32;
         skyCanvas.height = 256;
         const sCtx = skyCanvas.getContext('2d');
         const grad = sCtx.createLinearGradient(0, 0, 0, 256);
         grad.addColorStop(0.0, '#020617');
-        grad.addColorStop(0.42, '#0f172a');
-        grad.addColorStop(0.75, '#1e3a8a');
+        grad.addColorStop(0.45, '#0f172a');
+        grad.addColorStop(0.78, '#1e3a8a');
         grad.addColorStop(1.0, '#0f172a');
         sCtx.fillStyle = grad;
         sCtx.fillRect(0, 0, 32, 256);
-        const skyTex = new THREE.CanvasTexture(skyCanvas);
-        const skyDome = new THREE.Mesh(skyGeo, new THREE.MeshBasicMaterial({ map: skyTex, side: THREE.BackSide, fog: false }));
+        const skyDome = new THREE.Mesh(skyGeo, new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(skyCanvas), side: THREE.BackSide, fog: false }));
         scene.add(skyDome);
 
-        // --- TOPOGRAFI KABUPATEN ACEH TENGAH (TAKENGON & DANAU LUT TAWAR) ---
-        // Meniru kontur Google Earth: Lembah Takengon di barat, Danau Lut Tawar di timur, dikelilingi pegunungan Bukit Barisan.
+        // --- KOORDINAT GEOGRAFIS NYATA LANDMARK ---
+        const posTakengon     = geoToWorld(4.62639, 96.84750);       // Kota Takengon (sisi barat danau)
+        const posBupati       = geoToWorld(4.6217575, 96.8456605);   // Kantor Bupati Aceh Tengah
+        const posPendopo      = geoToWorld(4.61985, 96.84748);       // Pendopo Bupati
+        const posMusara       = geoToWorld(4.622811, 96.843042);     // Musara Alun
+        const posLake         = geoToWorld(4.6112, 96.9267);         // Pusat Danau Lut Tawar
+        const posBurniTelong  = geoToWorld(4.7667, 96.8219);         // Gunung Burni Telong (2.624 mdpl, Utara)
+        const posBurniKlieten = geoToWorld(4.5522, 96.9574);         // Gunung Burni Klieten (2.930 mdpl, Tenggara)
+        const posBuntulRintis = geoToWorld(4.648, 96.814);           // Buntul Rintis (Tensaran, Bebesen)
+        const posLoyangKoro   = geoToWorld(4.60558, 96.88398);       // Gua Loyang Koro (Toweren)
+        const posMongalKopi   = geoToWorld(4.643197, 96.837918);     // Sentra CV. Oro Kopi Gayo (Mongal)
+
+        // Sudut orientasi sumbu panjang Danau Lut Tawar: Barat -> Timur-Tenggara (-0.22 rad)
+        const LAKE_ANGLE = -0.22;
+
+        // --- TOPOGRAFI GEOSPASIAL KABUPATEN ACEH TENGAH ---
         function getAcehTengahElevation(x, z) {
-            // Cekungan Danau Lut Tawar (posisi x: 26, z: 2)
-            const lakeCenterX = 26;
-            const lakeCenterZ = 2;
-            const dxLake = (x - lakeCenterX) / 30;
-            const dzLake = (z - lakeCenterZ) / 18;
-            const lakeDist = Math.sqrt(dxLake * dxLake + dzLake * dzLake);
+            // 1. Cekungan Danau Lut Tawar (rotasi +LAKE_ANGLE pada titik lokal agar sejajar dengan rotasi mesh -LAKE_ANGLE)
+            const dx0 = x - posLake.x;
+            const dz0 = z - posLake.z;
+            const cosA = Math.cos(LAKE_ANGLE);
+            const sinA = Math.sin(LAKE_ANGLE);
+            const rotX = dx0 * cosA - dz0 * sinA;
+            const rotZ = dx0 * sinA + dz0 * cosA;
+            const lakeDist = Math.sqrt(Math.pow(rotX / 34, 2) + Math.pow(rotZ / 13, 2));
 
             if (lakeDist < 1.0) {
-                return -2.8 * (1 - lakeDist * lakeDist);
+                return -3.2 * (1 - lakeDist * lakeDist);
             }
 
-            // Lembah Kota Takengon
-            const cityCenterX = -22;
-            const cityCenterZ = 0;
-            const dxCity = (x - cityCenterX) / 22;
-            const dzCity = (z - cityCenterZ) / 22;
+            // 2. Lembah Perkotaan Takengon (Lut Tawar, Bebesen, Kebayakan: ~1.258 mdpl)
+            const dxCity = (x - posTakengon.x) / 19;
+            const dzCity = (z - posTakengon.z) / 19;
             const cityDist = Math.sqrt(dxCity * dxCity + dzCity * dzCity);
-
             if (cityDist < 1.0) {
-                return 0.05; // Dataran lembah Takengon
+                return 0.08;
             }
 
-            // Pegunungan Bukit Barisan mengelilingi lembah & danau
-            const ridgeFactor = Math.min(cityDist - 1.0, lakeDist - 1.0);
-            const mountainNoise =
-                Math.sin(x * 0.08) * Math.cos(z * 0.08) * 6.0 +
-                Math.sin(x * 0.18 + z * 0.15) * 2.5 +
-                Math.cos(x * 0.04 - z * 0.04) * 4.5;
+            // 3. Puncak Stratovolcano Burni Telong (2.624 mdpl di Utara)
+            const dTelong = Math.hypot(x - posBurniTelong.x, z - posBurniTelong.z);
+            const telongPeak = dTelong < 32 ? 32 * Math.pow(1 - dTelong / 32, 1.7) : 0;
 
-            return Math.max(0.12, ridgeFactor * 15.5 + Math.abs(mountainNoise));
+            // 4. Puncak Tertinggi Burni Klieten (2.930 mdpl di Tenggara)
+            const dKlieten = Math.hypot(x - posBurniKlieten.x, z - posBurniKlieten.z);
+            const klietenPeak = dKlieten < 34 ? 35 * Math.pow(1 - dKlieten / 34, 1.7) : 0;
+
+            // 5. Puncak Pantan Terong (1.800 mdpl, Timur Laut Takengon)
+            const dPantan = Math.hypot(x - (posTakengon.x + 11), z - (posTakengon.z - 20));
+            const pantanPeak = dPantan < 17 ? 14.5 * Math.pow(1 - dPantan / 17, 1.5) : 0;
+
+            // 6. Rangkaian Pegunungan Bukit Barisan
+            const ridgeFactor = Math.max(0, Math.min(cityDist - 1.0, lakeDist - 1.0));
+            const mountainNoise =
+                Math.sin(x * 0.065) * Math.cos(z * 0.065) * 4.8 +
+                Math.sin(x * 0.16 + z * 0.14) * 1.9 +
+                Math.cos(x * 0.04 - z * 0.05) * 3.6;
+
+            return Math.max(0.14, ridgeFactor * 11.0 + Math.abs(mountainNoise) + telongPeak + klietenPeak + pantanPeak);
         }
 
-        const terrainSize = 260;
-        const terrainSegments = 150;
+        const terrainSize = 300;
+        const terrainSegments = 170;
         const terrainGeo = new THREE.PlaneGeometry(terrainSize, terrainSize, terrainSegments, terrainSegments);
         terrainGeo.rotateX(-Math.PI / 2);
 
         const posAttr = terrainGeo.attributes.position;
         const colors = [];
         const colorValley = new THREE.Color(0x1e293b);    // Perkotaan Takengon
-        const colorCoffee = new THREE.Color(0x164e3b);    // Perkebunan Kopi Arabika Gayo
+        const colorCoffee = new THREE.Color(0x164e3b);    // Perkebunan Kopi Arabika Gayo (900-1.700 mdpl)
         const colorForest = new THREE.Color(0x064e3b);    // Hutan Pinus Bukit Barisan
-        const colorPeak   = new THREE.Color(0x334155);    // Puncak Gunung
+        const colorPeak   = new THREE.Color(0x475569);    // Puncak Gunung (>2.500 mdpl)
         const colorShore  = new THREE.Color(0x3f3f46);    // Pesisir Danau
 
         for (let i = 0; i < posAttr.count; i++) {
@@ -521,12 +641,12 @@
             let c = colorValley.clone();
             if (vy < 0.02) {
                 c.copy(colorShore);
-            } else if (vy < 0.3) {
+            } else if (vy < 0.35) {
                 c.copy(colorValley);
-            } else if (vy < 6.0) {
-                c.lerpColors(colorCoffee, colorForest, (vy - 0.3) / 5.7);
+            } else if (vy < 8.5) {
+                c.lerpColors(colorCoffee, colorForest, (vy - 0.35) / 8.15);
             } else {
-                c.lerpColors(colorForest, colorPeak, Math.min(1, (vy - 6.0) / 15));
+                c.lerpColors(colorForest, colorPeak, Math.min(1, (vy - 8.5) / 22));
             }
             colors.push(c.r, c.g, c.b);
         }
@@ -534,90 +654,118 @@
         terrainGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
         terrainGeo.computeVertexNormals();
 
-        const terrainMat = new THREE.MeshStandardMaterial({
+        const terrainMesh = new THREE.Mesh(terrainGeo, new THREE.MeshStandardMaterial({
             vertexColors: true,
-            roughness: 0.86,
+            roughness: 0.85,
             metalness: 0.05
-        });
-        const terrainMesh = new THREE.Mesh(terrainGeo, terrainMat);
+        }));
         terrainMesh.receiveShadow = true;
         scene.add(terrainMesh);
 
-        // --- DANAU LUT TAWAR (AIR JERNIH DENGAN REFLEKSI) ---
-        const lakeGeo = new THREE.PlaneGeometry(70, 46, 36, 36);
+        // --- DANAU LUT TAWAR (5.742,10 HA, ELEVASI 1.230 MDPL, KEDALAMAN MAKS 84,23 M) ---
+        const lakeGeo = new THREE.PlaneGeometry(76, 34, 32, 32);
         lakeGeo.rotateX(-Math.PI / 2);
         const lakeMat = new THREE.MeshStandardMaterial({
             color: 0x0284c7,
             emissive: 0x0369a1,
-            emissiveIntensity: 0.3,
-            roughness: 0.1,
-            metalness: 0.88,
+            emissiveIntensity: 0.34,
+            roughness: 0.08,
+            metalness: 0.9,
             transparent: true,
             opacity: 0.94
         });
         const lakeMesh = new THREE.Mesh(lakeGeo, lakeMat);
-        lakeMesh.position.set(26, -0.12, 2);
+        lakeMesh.position.set(posLake.x, -0.14, posLake.z);
+        lakeMesh.rotation.y = LAKE_ANGLE; // Selaras dengan cekungan elevasi Barat -> Timur-Tenggara
         lakeMesh.receiveShadow = true;
         scene.add(lakeMesh);
 
-        // --- JALAN RAYA UTAMA KOTA TAKENGON & LINGKAR DANAU LUT TAWAR ---
+        // --- OUTLET TUNGGAL: SUNGAI KRUENG PEUSANGAN (128 KM) ---
+        const riverMat = new THREE.MeshStandardMaterial({
+            color: 0x0ea5e9,
+            emissive: 0x0284c7,
+            emissiveIntensity: 0.3,
+            roughness: 0.15,
+            metalness: 0.8
+        });
+        const riverSegment1 = new THREE.Mesh(new THREE.PlaneGeometry(24, 1.8), riverMat);
+        riverSegment1.rotation.x = -Math.PI / 2;
+        riverSegment1.rotation.z = 0.38;
+        riverSegment1.position.set(-25, 0.13, -15);
+        scene.add(riverSegment1);
+
+        // --- JALAN RAYA KOTA TAKENGON (JL. YOS SUDARSO, LEBE KADER, LINGKAR DANAU) ---
         const roadMat = new THREE.MeshStandardMaterial({ map: createRoadTexture(), roughness: 0.75, metalness: 0.1 });
 
-        // Grid Jalan Kota Takengon
-        const cityRoadZ = [-10, 0, 10];
+        const cityRoadZ = [posTakengon.z - 7, posTakengon.z, posTakengon.z + 7];
         cityRoadZ.forEach(zPos => {
-            const rx = new THREE.Mesh(new THREE.PlaneGeometry(34, 3.0), roadMat);
+            const rx = new THREE.Mesh(new THREE.PlaneGeometry(28, 2.4), roadMat);
             rx.rotation.x = -Math.PI / 2;
-            rx.position.set(-22, 0.08, zPos);
+            rx.position.set(posTakengon.x, 0.11, zPos);
             rx.receiveShadow = true;
             scene.add(rx);
         });
 
-        const cityRoadX = [-34, -22, -10];
+        const cityRoadX = [posTakengon.x - 9, posTakengon.x, posTakengon.x + 9];
         cityRoadX.forEach(xPos => {
-            const rz = new THREE.Mesh(new THREE.PlaneGeometry(3.0, 32), roadMat);
+            const rz = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 24), roadMat);
             rz.rotation.x = -Math.PI / 2;
-            rz.position.set(xPos, 0.09, 0);
+            rz.position.set(xPos, 0.12, posTakengon.z);
             rz.receiveShadow = true;
             scene.add(rz);
         });
 
-        // Jalan Lingkar Danau Lut Tawar
-        const northLakeRoad = new THREE.Mesh(new THREE.PlaneGeometry(58, 2.4), roadMat);
-        northLakeRoad.rotation.x = -Math.PI / 2;
-        northLakeRoad.position.set(20, 0.14, -16.5);
-        scene.add(northLakeRoad);
+        // Jalan Lingkar Danau Lut Tawar mengikuti kontur elevasi pesisir
+        function createContourRoad(startX, startZ, endX, endZ, segments = 16) {
+            for (let i = 0; i < segments; i++) {
+                const t1 = i / segments;
+                const t2 = (i + 1) / segments;
+                const x1 = startX + (endX - startX) * t1;
+                const z1 = startZ + (endZ - startZ) * t1;
+                const x2 = startX + (endX - startX) * t2;
+                const z2 = startZ + (endZ - startZ) * t2;
+                const mx = (x1 + x2) / 2;
+                const mz = (z1 + z2) / 2;
+                const my = Math.max(0.14, getAcehTengahElevation(mx, mz) + 0.08);
+                const len = Math.hypot(x2 - x1, z2 - z1) + 0.15;
+                const yaw = Math.atan2(z2 - z1, x2 - x1);
 
-        const southLakeRoad = new THREE.Mesh(new THREE.PlaneGeometry(58, 2.4), roadMat);
-        southLakeRoad.rotation.x = -Math.PI / 2;
-        southLakeRoad.position.set(20, 0.14, 20.5);
-        scene.add(southLakeRoad);
+                const segMesh = new THREE.Mesh(new THREE.PlaneGeometry(len, 1.9), roadMat);
+                segMesh.rotation.x = -Math.PI / 2;
+                segMesh.rotation.z = -yaw;
+                segMesh.position.set(mx, my, mz);
+                scene.add(segMesh);
+            }
+        }
+        // Jalur Utara (Takengon - Mendale - Bintang) & Jalur Selatan (Dedalu - Toweren - Bintang)
+        createContourRoad(-14, -9.5, 42, 3.0);
+        createContourRoad(-14, 10.5, 42, 16.5);
 
-        // --- POHON PINUS & VEGETASI DATARAN TINGGI ---
-        const treeTrunkGeo = new THREE.CylinderGeometry(0.15, 0.24, 1.4, 6);
+        // --- POHON PINUS & KEBUN KOPI ARABIKA GAYO ---
+        const treeTrunkGeo = new THREE.CylinderGeometry(0.14, 0.22, 1.3, 6);
         const treeTrunkMat = new THREE.MeshStandardMaterial({ color: 0x3f2e22, roughness: 0.9 });
-        const treeCrownGeo = new THREE.ConeGeometry(1.2, 3.0, 7);
+        const treeCrownGeo = new THREE.ConeGeometry(1.15, 2.9, 7);
         const treeCrownMat = new THREE.MeshStandardMaterial({ color: 0x065f46, roughness: 0.8 });
 
-        const pineCount = 450;
+        const pineCount = 520;
         const pineTrunkInst = new THREE.InstancedMesh(treeTrunkGeo, treeTrunkMat, pineCount);
         const pineCrownInst = new THREE.InstancedMesh(treeCrownGeo, treeCrownMat, pineCount);
         const treeDummy = new THREE.Object3D();
         let placedPines = 0;
 
-        for (let attempt = 0; attempt < 1600 && placedPines < pineCount; attempt++) {
-            const tx = (Math.random() - 0.5) * 180;
-            const tz = (Math.random() - 0.5) * 180;
+        for (let attempt = 0; attempt < 1800 && placedPines < pineCount; attempt++) {
+            const tx = (Math.random() - 0.5) * 210;
+            const tz = (Math.random() - 0.5) * 210;
             const ty = getAcehTengahElevation(tx, tz);
 
-            if (ty > 0.35 && ty < 24) {
-                const scale = 0.8 + Math.random() * 0.7;
-                treeDummy.position.set(tx, ty + 0.5 * scale, tz);
+            if (ty > 0.45 && ty < 26) {
+                const scale = 0.75 + Math.random() * 0.65;
+                treeDummy.position.set(tx, ty + 0.45 * scale, tz);
                 treeDummy.scale.set(scale, scale, scale);
                 treeDummy.updateMatrix();
                 pineTrunkInst.setMatrixAt(placedPines, treeDummy.matrix);
 
-                treeDummy.position.set(tx, ty + 2.1 * scale, tz);
+                treeDummy.position.set(tx, ty + 2.0 * scale, tz);
                 treeDummy.updateMatrix();
                 pineCrownInst.setMatrixAt(placedPines, treeDummy.matrix);
                 placedPines++;
@@ -626,154 +774,275 @@
         scene.add(pineTrunkInst);
         scene.add(pineCrownInst);
 
+        // --- LANDMARK ARSITEKTURAL NYATA KABUPATEN ACEH TENGAH ---
+        // 1. Kompleks Kantor Bupati Aceh Tengah & Command Center SAPA (Jl. Kol. Yos Sudarso No. 1)
+        const cityHallGroup = new THREE.Group();
+        cityHallGroup.position.set(posBupati.x, 0.1, posBupati.z);
+
+        const plaza = new THREE.Mesh(
+            new THREE.CylinderGeometry(4.4, 4.8, 0.28, 16),
+            new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.5, metalness: 0.4 })
+        );
+        plaza.position.y = 0.14;
+        plaza.receiveShadow = true;
+        cityHallGroup.add(plaza);
+
+        const baseTower = new THREE.Mesh(
+            new THREE.CylinderGeometry(2.0, 2.8, 9.5, 12),
+            new THREE.MeshStandardMaterial({
+                map: createBuildingTexture('#10b981', true),
+                emissiveMap: createBuildingTexture('#10b981', true),
+                emissive: 0xffffff,
+                emissiveIntensity: 0.62,
+                metalness: 0.8,
+                roughness: 0.2
+            })
+        );
+        baseTower.position.y = 4.9;
+        baseTower.castShadow = true;
+        cityHallGroup.add(baseTower);
+
+        // Kristal Portal SAPA Master AI
+        const aiCore = new THREE.Mesh(
+            new THREE.OctahedronGeometry(1.3, 1),
+            new THREE.MeshStandardMaterial({ color: 0x00f0ff, emissive: 0x00f0ff, emissiveIntensity: 1.4, roughness: 0.1, metalness: 0.9 })
+        );
+        aiCore.position.y = 11.4;
+        cityHallGroup.add(aiCore);
+        scene.add(cityHallGroup);
+
+        // 2. Pendopo Bupati & Musara Alun
+        const pendopoMesh = new THREE.Mesh(
+            new THREE.BoxGeometry(3.2, 2.2, 2.6),
+            new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xb45309, emissiveIntensity: 0.35, roughness: 0.3 })
+        );
+        pendopoMesh.position.set(posPendopo.x, 1.2, posPendopo.z);
+        pendopoMesh.castShadow = true;
+        scene.add(pendopoMesh);
+
+        const musaraMesh = new THREE.Mesh(
+            new THREE.CylinderGeometry(2.3, 2.5, 1.8, 8),
+            new THREE.MeshStandardMaterial({ color: 0x0ea5e9, emissive: 0x0369a1, emissiveIntensity: 0.35, roughness: 0.3 })
+        );
+        musaraMesh.position.set(posMusara.x, 1.0, posMusara.z);
+        musaraMesh.castShadow = true;
+        scene.add(musaraMesh);
+
+        // 3. Sentra Hilirisasi & Ekspor Kopi Arabika Gayo (Kampung Mongal, Kec. Bebesen)
+        const kopiHubGroup = new THREE.Group();
+        const kopiElev = Math.max(0.15, getAcehTengahElevation(posMongalKopi.x, posMongalKopi.z));
+        kopiHubGroup.position.set(posMongalKopi.x, kopiElev, posMongalKopi.z);
+        const kopiWarehouse = new THREE.Mesh(
+            new THREE.BoxGeometry(5.0, 3.2, 3.4),
+            new THREE.MeshStandardMaterial({
+                map: createBuildingTexture('#f59e0b', true),
+                emissiveMap: createBuildingTexture('#f59e0b', true),
+                emissive: 0xffffff,
+                emissiveIntensity: 0.5,
+                metalness: 0.6,
+                roughness: 0.3
+            })
+        );
+        kopiWarehouse.position.y = 1.6;
+        kopiWarehouse.castShadow = true;
+        kopiHubGroup.add(kopiWarehouse);
+        scene.add(kopiHubGroup);
+
+        // 4. Dermaga Dedalu & Dermaga Kota Takengon (Tepi Barat Danau Lut Tawar)
+        const dermagaMesh = new THREE.Mesh(
+            new THREE.BoxGeometry(4.5, 0.35, 1.4),
+            new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.5 })
+        );
+        dermagaMesh.position.set(-14.5, 0.15, 1.5);
+        scene.add(dermagaMesh);
+
+        // --- INTERACTIVE 3D LANDMARK BEACONS (RAYCASTER) ---
+        const clickableBeacons = [];
+        const beaconGeo = new THREE.OctahedronGeometry(1.1, 0);
+
+        function registerBeacon(x, y, z, colorHex, info) {
+            const mat = new THREE.MeshStandardMaterial({
+                color: colorHex,
+                emissive: colorHex,
+                emissiveIntensity: 1.2,
+                roughness: 0.2
+            });
+            const mesh = new THREE.Mesh(beaconGeo, mat);
+            mesh.position.set(x, y, z);
+            mesh.userData = info;
+            scene.add(mesh);
+            clickableBeacons.push(mesh);
+        }
+
+        registerBeacon(posBupati.x, 13.8, posBupati.z, 0x00f0ff, {
+            title: "Kantor Bupati & Command Center SAPA",
+            coords: "4.6217575°N, 96.8456605°E • Jl. Kol. Yos Sudarso No. 1",
+            desc: "Pusat pemerintahan Bupati Drs. Haili Yoga, M.Si., Pendopo Bupati, Musara Alun, dan Command Center Portal SAPA Diskominfo.",
+            verified: true
+        });
+
+        registerBeacon(posLake.x, 3.2, posLake.z, 0x38bdf8, {
+            title: "Danau Lut Tawar (5.742,10 Ha)",
+            coords: "4.6112°N, 96.9267°E • Elevasi 1.230 mdpl",
+            desc: "Panjang maks 15,727 km, lebar 4,563 km, kedalaman maks 84,23 m. Outlet tunggal Sungai Peusangan (128 km) & habitat ikan endemik Depik.",
+            verified: true
+        });
+
+        registerBeacon(posMongalKopi.x, kopiElev + 5.2, posMongalKopi.z, 0xf59e0b, {
+            title: "Sentra Kopi Arabika Gayo (48.300 Ha)",
+            coords: "4.6432°N, 96.8379°E • Kampung Mongal, Bebesen",
+            desc: "Produksi 37.008 ton (2023), Indikasi Geografis (900–1.700 mdpl), eksportir CV. Oro Kopi Gayo & 10 kecamatan sentra.",
+            verified: true
+        });
+
+        registerBeacon(posBurniTelong.x, getAcehTengahElevation(posBurniTelong.x, posBurniTelong.z) + 3.5, posBurniTelong.z, 0xf43f5e, {
+            title: "Gunung Burni Telong (2.624 mdpl)",
+            coords: "4.7667°N, 96.8219°E • ±17 km Utara Takengon",
+            desc: "Gunung api stratovolcano dengan 3 kawah puncak di lereng selatan Geureudong (secara administratif kini di Kab. Bener Meriah).",
+            verified: true
+        });
+
+        registerBeacon(posBurniKlieten.x, getAcehTengahElevation(posBurniKlieten.x, posBurniKlieten.z) + 3.5, posBurniKlieten.z, 0xa855f7, {
+            title: "Gunung Burni Klieten (2.930 mdpl)",
+            coords: "4.5522°N, 96.9574°E • Kec. Bintang",
+            desc: "[U] Puncak tertinggi Kab. Aceh Tengah (Liputan6: 2.930 m vs Jurnal Arkeologi: 2.640 m).",
+            verified: false
+        });
+
+        registerBeacon(posLoyangKoro.x, Math.max(1.5, getAcehTengahElevation(posLoyangKoro.x, posLoyangKoro.z) + 2.5), posLoyangKoro.z, 0x10b981, {
+            title: "Gua Loyang Koro (Desa Toweren)",
+            coords: "4.60558°N, 96.88398°E • Kaki Bukit Birah Panyang",
+            desc: "[U] Situs prasejarah & geowisata (±5–7 km dari Takengon; koordinat ESDM vs BPCB berselisih ±4 km).",
+            verified: false
+        });
+
+        // Raycaster untuk Klik / Tap 3D Beacon
+        const raycaster = new THREE.Raycaster();
+        const pointer = new THREE.Vector2();
+        let pointerDownPos = { x: 0, y: 0 };
+
+        renderer.domElement.addEventListener('pointerdown', (e) => {
+            pointerDownPos = { x: e.clientX, y: e.clientY };
+        });
+
+        renderer.domElement.addEventListener('pointerup', (e) => {
+            const moveDist = Math.hypot(e.clientX - pointerDownPos.x, e.clientY - pointerDownPos.y);
+            if (moveDist > 6) return; // Abaikan jika user sedang melakukan drag kamera
+
+            pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+            pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            raycaster.setFromCamera(pointer, camera);
+
+            const hits = raycaster.intersectObjects(clickableBeacons);
+            if (hits.length > 0) {
+                const info = hits[0].object.userData;
+                showLandmarkInfo(info.title, info.coords, info.desc, info.verified);
+            }
+        });
+
         // --- KENDARAAN OTONOM & PERAHU WISATA ---
         const vehicles = [];
-        const carBodyGeo = new THREE.BoxGeometry(1.3, 0.55, 0.72);
-        const carCabinGeo = new THREE.BoxGeometry(0.72, 0.38, 0.62);
+        const carBodyGeo = new THREE.BoxGeometry(1.2, 0.5, 0.68);
+        const carCabinGeo = new THREE.BoxGeometry(0.68, 0.35, 0.58);
         const carColors = [0xf8fafc, 0x38bdf8, 0xf59e0b, 0x10b981, 0x94a3b8];
 
-        for (let v = 0; v < 20; v++) {
+        for (let v = 0; v < 22; v++) {
             const carGroup = new THREE.Group();
-            const bodyMat = new THREE.MeshStandardMaterial({ color: carColors[v % carColors.length], metalness: 0.7, roughness: 0.2 });
-            const body = new THREE.Mesh(carBodyGeo, bodyMat);
-            body.position.y = 0.35;
-            body.castShadow = true;
+            const body = new THREE.Mesh(carBodyGeo, new THREE.MeshStandardMaterial({ color: carColors[v % carColors.length], metalness: 0.7, roughness: 0.2 }));
+            body.position.y = 0.32;
             carGroup.add(body);
 
             const cabin = new THREE.Mesh(carCabinGeo, new THREE.MeshStandardMaterial({ color: 0x030712, roughness: 0.1, metalness: 0.9 }));
-            cabin.position.set(-0.08, 0.72, 0);
+            cabin.position.set(-0.08, 0.66, 0);
             carGroup.add(cabin);
 
-            const isLakeRoad = v >= 14;
-            const axis = (isLakeRoad || v % 2 === 0) ? 'x' : 'z';
-            const dir = (v % 2 === 0) ? 1 : -1;
+            const axis = v % 2 === 0 ? 'x' : 'z';
+            const dir = v % 2 === 0 ? 1 : -1;
 
-            if (isLakeRoad) {
-                const zLane = v % 2 === 0 ? -16.5 : 20.5;
-                carGroup.position.set(-6 + Math.random() * 48, 0.18, zLane + dir * 0.6);
-                if (dir === -1) carGroup.rotation.y = Math.PI;
-                vehicles.push({ mesh: carGroup, axis: 'x', dir, speed: 0.12 + Math.random() * 0.05, minBound: -10, maxBound: 46 });
-            } else if (axis === 'x') {
+            if (axis === 'x') {
                 const zLane = cityRoadZ[v % cityRoadZ.length];
-                carGroup.position.set(-38 + Math.random() * 30, 0.1, zLane + dir * 0.7);
+                carGroup.position.set(posTakengon.x - 11 + Math.random() * 22, 0.12, zLane + dir * 0.55);
                 if (dir === -1) carGroup.rotation.y = Math.PI;
-                vehicles.push({ mesh: carGroup, axis: 'x', dir, speed: 0.09 + Math.random() * 0.05, minBound: -38, maxBound: -8 });
+                vehicles.push({ mesh: carGroup, axis: 'x', dir, speed: 0.09 + Math.random() * 0.04, minBound: posTakengon.x - 13, maxBound: posTakengon.x + 13 });
             } else {
                 const xLane = cityRoadX[v % cityRoadX.length];
-                carGroup.position.set(xLane - dir * 0.7, 0.1, -14 + Math.random() * 28);
+                carGroup.position.set(xLane - dir * 0.55, 0.12, posTakengon.z - 10 + Math.random() * 20);
                 carGroup.rotation.y = dir === 1 ? -Math.PI / 2 : Math.PI / 2;
-                vehicles.push({ mesh: carGroup, axis: 'z', dir, speed: 0.09 + Math.random() * 0.05, minBound: -14, maxBound: 14 });
+                vehicles.push({ mesh: carGroup, axis: 'z', dir, speed: 0.09 + Math.random() * 0.04, minBound: posTakengon.z - 11, maxBound: posTakengon.z + 11 });
             }
             scene.add(carGroup);
         }
 
-        // Perahu di Danau Lut Tawar
+        // Perahu wisata & nelayan ikan Depik di Danau Lut Tawar (mengikuti rotasi danau LAKE_ANGLE)
         const boats = [];
-        const boatHullGeo = new THREE.BoxGeometry(2.4, 0.48, 0.9);
-        for (let b = 0; b < 6; b++) {
+        const boatHullGeo = new THREE.BoxGeometry(2.2, 0.44, 0.85);
+        for (let b = 0; b < 7; b++) {
             const boatGroup = new THREE.Group();
             const hull = new THREE.Mesh(boatHullGeo, new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.3 }));
             hull.position.y = 0.1;
             boatGroup.add(hull);
 
-            const canopy = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.38, 0.75), new THREE.MeshStandardMaterial({ color: 0x0284c7 }));
-            canopy.position.set(-0.2, 0.48, 0);
+            const canopy = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.34, 0.7), new THREE.MeshStandardMaterial({ color: 0x0284c7 }));
+            canopy.position.set(-0.2, 0.44, 0);
             boatGroup.add(canopy);
 
-            const angle = (b / 6) * Math.PI * 2;
-            boatGroup.position.set(26 + Math.cos(angle) * 15, -0.05, 2 + Math.sin(angle) * 9);
+            const angle = (b / 7) * Math.PI * 2;
+            boatGroup.position.set(posLake.x, -0.06, posLake.z);
             scene.add(boatGroup);
-            boats.push({ mesh: boatGroup, angle, radiusX: 12 + (b % 3) * 5, radiusZ: 6 + (b % 2) * 4, speed: 0.16 + b * 0.03 });
+            boats.push({ mesh: boatGroup, angle, radiusX: 14 + (b % 3) * 5, radiusZ: 5 + (b % 2) * 2.5, speed: 0.14 + b * 0.025 });
         }
 
-        // --- PENDOPO KANTOR BUPATI ACEH TENGAH ---
-        const cityHallGroup = new THREE.Group();
-        cityHallGroup.position.set(-22, 0.05, 0);
-
-        const plaza = new THREE.Mesh(
-            new THREE.CylinderGeometry(5.0, 5.4, 0.3, 16),
-            new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.5, metalness: 0.4 })
-        );
-        plaza.position.y = 0.15;
-        plaza.receiveShadow = true;
-        cityHallGroup.add(plaza);
-
-        const baseTower = new THREE.Mesh(
-            new THREE.CylinderGeometry(2.3, 3.2, 10, 12),
-            new THREE.MeshStandardMaterial({
-                map: createBuildingTexture('#10b981', true),
-                emissiveMap: createBuildingTexture('#10b981', true),
-                emissive: 0xffffff,
-                emissiveIntensity: 0.6,
-                metalness: 0.8,
-                roughness: 0.2
-            })
-        );
-        baseTower.position.y = 5.1;
-        baseTower.castShadow = true;
-        cityHallGroup.add(baseTower);
-
-        // Kristal Master AI
-        const aiCore = new THREE.Mesh(
-            new THREE.OctahedronGeometry(1.4, 1),
-            new THREE.MeshStandardMaterial({ color: 0x00f0ff, emissive: 0x00f0ff, emissiveIntensity: 1.3, roughness: 0.1, metalness: 0.9 })
-        );
-        aiCore.position.y = 12.2;
-        cityHallGroup.add(aiCore);
-        scene.add(cityHallGroup);
-
-        // --- SISTEM SLOT INFRASTRUKTUR & GEDUNG ---
+        // --- SLOT PEMBANGUNAN INFRASTRUKTUR RPJMD 2025–2029 ---
         const buildingSlots = [];
         const buildings = [];
 
-        const takengonX = [-36.5, -29.5, -26.5, -19.5, -16.5, -9.5];
-        const takengonZ = [-14.5, -7.5, -4.5, 4.5, 7.5, 14.5];
+        const takengonX = [posTakengon.x - 12, posTakengon.x - 5.5, posTakengon.x - 2.5, posTakengon.x + 2.5, posTakengon.x + 5.5, posTakengon.x + 12];
+        const takengonZ = [posTakengon.z - 10, posTakengon.z - 3.5, posTakengon.z + 3.5, posTakengon.z + 10];
         takengonX.forEach(x => {
             takengonZ.forEach(z => {
-                if (Math.abs(x - (-22)) < 6.0 && Math.abs(z) < 6.0) return;
+                if (Math.hypot(x - posBupati.x, z - posBupati.z) < 6.2) return;
                 buildingSlots.push({ x, z, y: getAcehTengahElevation(x, z), occupied: false, building: null });
             });
         });
 
+        // Slot Ekowisata Pesisir Danau Lut Tawar (Mendale, Dedalu, Toweren, Bintang)
         const shoreSpots = [
-            { x: -4, z: -9 }, { x: -4, z: 9 },
-            { x: 6, z: -14 }, { x: 18, z: -14 }, { x: 30, z: -14 },
-            { x: 6, z: 18 },  { x: 18, z: 18 },  { x: 30, z: 18 }
+            { x: -10, z: -7 }, { x: -10, z: 6 },
+            { x: 2, z: -10 },  { x: 16, z: -8 }, { x: 30, z: -5 },
+            { x: 2, z: 12 },   { x: 16, z: 14 }, { x: 30, z: 16 }
         ];
         shoreSpots.forEach(pt => {
-            buildingSlots.push({ x: pt.x, z: pt.z, y: Math.max(0.05, getAcehTengahElevation(pt.x, pt.z)), occupied: false, building: null });
+            buildingSlots.push({ x: pt.x, z: pt.z, y: Math.max(0.12, getAcehTengahElevation(pt.x, pt.z)), occupied: false, building: null });
         });
 
         buildingSlots.sort(() => Math.random() - 0.5);
 
         const buildingCatalog = {
-            smart_green: [
-                { name: 'Eco-Resort Pesisir Lut Tawar', color: 0x10b981, hex: '#34d399', hRange: [5.0, 9.0], isPark: false },
-                { name: 'Taman Konservasi Pinus Gayo', color: 0x34d399, hex: '#10b981', hRange: [1.8, 2.8], isPark: true },
-                { name: 'PLTMH Mikro-Hidro Takengon', color: 0x00f0ff, hex: '#38bdf8', hRange: [5.5, 8.5], isPark: false }
+            sapa_digital: [
+                { name: 'Node Satu Data OPD (Portal SAPA)', color: 0x00f0ff, hex: '#38bdf8', hRange: [8.0, 13.5], isPark: false },
+                { name: 'Menara Fiber Optik Kecamatan', color: 0x3b82f6, hex: '#60a5fa', hRange: [9.0, 14.0], isPark: false },
+                { name: 'Taman Digital & Wi-Fi Publik Gayo', color: 0x10b981, hex: '#34d399', hRange: [1.8, 2.5], isPark: true }
             ],
-            agro_maritime: [
-                { name: 'Sentra Ekspor Kopi Arabika Gayo', color: 0x84cc16, hex: '#a3e635', hRange: [7.0, 12.0], isPark: false },
-                { name: 'Smart Roasting & Cold Storage', color: 0xf59e0b, hex: '#fbbf24', hRange: [6.5, 10.0], isPark: false },
-                { name: 'Kebun Riset Kopi Arabika Gayo', color: 0x10b981, hex: '#34d399', hRange: [1.8, 2.8], isPark: true }
+            kopi_gayo: [
+                { name: 'Hub Hilirisasi Kopi Arabika Gayo', color: 0xf59e0b, hex: '#fbbf24', hRange: [7.0, 11.5], isPark: false },
+                { name: 'Unit Sertifikasi Ekspor & Resi Gudang', color: 0x84cc16, hex: '#a3e635', hRange: [6.5, 10.0], isPark: false },
+                { name: 'Demplot Kopi Tahan Iklim (900-1700m)', color: 0x10b981, hex: '#34d399', hRange: [1.8, 2.5], isPark: true }
             ],
-            tech_hub: [
-                { name: 'Takengon Command & Data Center', color: 0x00f0ff, hex: '#38bdf8', hRange: [9.5, 16.0], isPark: false },
-                { name: 'Inkubator Digital Dataran Tinggi', color: 0x9d4edd, hex: '#c084fc', hRange: [10.5, 17.0], isPark: false },
-                { name: 'Hub Logistik Bandara Rembele', color: 0x3b82f6, hex: '#60a5fa', hRange: [7.5, 12.0], isPark: false }
+            ekowisata_danau: [
+                { name: 'Eco-Resort & Geowisata Lut Tawar', color: 0x10b981, hex: '#34d399', hRange: [5.5, 9.0], isPark: false },
+                { name: 'Tanggul Boom–Mendale & Dermaga Wisata', color: 0x0ea5e9, hex: '#38bdf8', hRange: [4.5, 7.5], isPark: false },
+                { name: 'Zona Konservasi Ikan Depik & Hutan Pinus', color: 0x34d399, hex: '#10b981', hRange: [1.8, 2.5], isPark: true }
             ],
-            public_welfare: [
-                { name: 'RSUD Datu Beru Smart Wing', color: 0xf43f5e, hex: '#fb7185', hRange: [8.0, 13.0], isPark: false },
-                { name: 'Politeknik Vokasi Gayo', color: 0xf59e0b, hex: '#fbbf24', hRange: [7.0, 11.0], isPark: false },
-                { name: 'Alun-Alun & Gedung Seni Gayo', color: 0x10b981, hex: '#34d399', hRange: [1.8, 2.8], isPark: true }
+            kesra_stunting: [
+                { name: 'Posyandu Digital & Gizi Balita Terpadu', color: 0xf43f5e, hex: '#fb7185', hRange: [6.5, 10.5], isPark: false },
+                { name: 'Balai Pelatihan Kerja & UMKM Gayo', color: 0x9d4edd, hex: '#c084fc', hRange: [7.5, 11.5], isPark: false },
+                { name: 'Laboratorium Wisata Religi & BKM', color: 0x10b981, hex: '#34d399', hRange: [1.8, 2.5], isPark: true }
             ]
         };
 
         const facadeCache = {};
         function getCachedFacade(hex) {
-            if (!facadeCache[hex]) {
-                facadeCache[hex] = createBuildingTexture(hex, true);
-            }
+            if (!facadeCache[hex]) facadeCache[hex] = createBuildingTexture(hex, true);
             return facadeCache[hex];
         }
 
@@ -781,62 +1050,52 @@
             if (!slot || slot.occupied) return null;
             slot.occupied = true;
 
-            const list = buildingCatalog[themeKey] || buildingCatalog.smart_green;
+            const list = buildingCatalog[themeKey] || buildingCatalog.sapa_digital;
             const spec = list[Math.floor(Math.random() * list.length)];
             const targetHeight = spec.hRange[0] + Math.random() * (spec.hRange[1] - spec.hRange[0]);
-            const width = spec.isPark ? 3.4 : (2.4 + Math.random() * 0.8);
+            const width = spec.isPark ? 3.2 : (2.2 + Math.random() * 0.7);
 
             const group = new THREE.Group();
-            group.position.set(slot.x, slot.y || 0.05, slot.z);
+            group.position.set(slot.x, slot.y || 0.1, slot.z);
 
             if (spec.isPark) {
                 const lawn = new THREE.Mesh(
-                    new THREE.BoxGeometry(width, 0.25, width),
+                    new THREE.BoxGeometry(width, 0.24, width),
                     new THREE.MeshStandardMaterial({ color: 0x064e3b, roughness: 0.9 })
                 );
-                lawn.position.y = 0.125;
-                lawn.receiveShadow = true;
+                lawn.position.y = 0.12;
                 group.add(lawn);
 
                 const dome = new THREE.Mesh(
                     new THREE.SphereGeometry(width * 0.32, 16, 12, 0, Math.PI * 2, 0, Math.PI / 2),
-                    new THREE.MeshStandardMaterial({ color: 0x34d399, emissive: 0x047857, emissiveIntensity: 0.4, transparent: true, opacity: 0.78, roughness: 0.1, metalness: 0.8 })
+                    new THREE.MeshStandardMaterial({ color: 0x34d399, emissive: 0x047857, emissiveIntensity: 0.4, transparent: true, opacity: 0.78 })
                 );
-                dome.position.y = 0.25;
+                dome.position.y = 0.24;
                 group.add(dome);
             } else {
                 const podium = new THREE.Mesh(
-                    new THREE.BoxGeometry(width + 0.35, 0.9, width + 0.35),
+                    new THREE.BoxGeometry(width + 0.3, 0.8, width + 0.3),
                     new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.5, metalness: 0.6 })
                 );
-                podium.position.y = 0.45;
-                podium.castShadow = true;
-                podium.receiveShadow = true;
+                podium.position.y = 0.4;
                 group.add(podium);
 
                 const facadeTex = getCachedFacade(spec.hex);
-                const mainGeo = new THREE.BoxGeometry(width, targetHeight, width);
-                const mainMat = new THREE.MeshStandardMaterial({
-                    map: facadeTex,
-                    emissiveMap: facadeTex,
-                    emissive: 0xffffff,
-                    emissiveIntensity: 0.55,
-                    roughness: 0.25,
-                    metalness: 0.75
-                });
-
-                const mesh = new THREE.Mesh(mainGeo, mainMat);
+                const mesh = new THREE.Mesh(
+                    new THREE.BoxGeometry(width, targetHeight, width),
+                    new THREE.MeshStandardMaterial({
+                        map: facadeTex,
+                        emissiveMap: facadeTex,
+                        emissive: 0xffffff,
+                        emissiveIntensity: 0.55,
+                        roughness: 0.25,
+                        metalness: 0.75
+                    })
+                );
                 mesh.position.y = targetHeight / 2;
                 mesh.castShadow = true;
                 mesh.receiveShadow = true;
                 group.add(mesh);
-
-                const roof = new THREE.Mesh(
-                    new THREE.BoxGeometry(width * 0.75, 0.7, width * 0.75),
-                    new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.4, metalness: 0.85 })
-                );
-                roof.position.y = targetHeight + 0.35;
-                group.add(roof);
             }
 
             group.scale.y = instant ? 1.0 : 0.05;
@@ -848,14 +1107,13 @@
             return bObj;
         }
 
-        // Buat 15 gedung awal
-        for (let i = 0; i < 15; i++) {
-            spawnBuilding(buildingSlots[i], 'smart_green', true);
+        for (let i = 0; i < 16; i++) {
+            spawnBuilding(buildingSlots[i], 'sapa_digital', true);
         }
 
-        // --- SWARM BOT AGENTS (INSTANCED MESH HINGGA 500 BOTS) ---
+        // --- SWARM BOT AGENTS (HINGGA 500 BOTS) ---
         const MAX_BOTS = 500;
-        const botGeo = new THREE.ConeGeometry(0.38, 1.1, 6);
+        const botGeo = new THREE.ConeGeometry(0.36, 1.05, 6);
         botGeo.rotateX(Math.PI / 2);
         const botMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2, metalness: 0.8 });
 
@@ -867,16 +1125,17 @@
             { id: 'builder', color: new THREE.Color(0xf59e0b), yHeight: 2.2 },
             { id: 'eco',     color: new THREE.Color(0x10b981), yHeight: 2.8 },
             { id: 'service', color: new THREE.Color(0x00f0ff), yHeight: 3.4 },
-            { id: 'security',color: new THREE.Color(0x9d4edd), yHeight: 4.2 }
+            { id: 'security',color: new THREE.Color(0x9d4edd), yHeight: 4.1 }
         ];
 
         const bots = [];
         const dummy = new THREE.Object3D();
+        const reusableDir = new THREE.Vector3();
 
         for (let i = 0; i < MAX_BOTS; i++) {
             const role = ROLES[i % ROLES.length];
-            const bx = -22 + (Math.random() - 0.3) * 65;
-            const bz = (Math.random() - 0.5) * 45;
+            const bx = -25 + (Math.random() - 0.3) * 75;
+            const bz = (Math.random() - 0.5) * 50;
             const groundH = Math.max(0, getAcehTengahElevation(bx, bz));
             bots.push({
                 id: i,
@@ -908,10 +1167,9 @@
             updateBotDistributionUI();
         });
 
-        // Laser konstruksi bot
-        const laserMat = new THREE.LineBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.7 });
+        const laserMat = new THREE.LineBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.72 });
         const laserLines = [];
-        for (let i = 0; i < 35; i++) {
+        for (let i = 0; i < 36; i++) {
             const geom = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
             const line = new THREE.Line(geom, laserMat);
             line.visible = false;
@@ -919,12 +1177,12 @@
             laserLines.push(line);
         }
 
-        // --- GEMINI AI INTEGRATION ---
+        // --- PRESET 3 PROGRAM UNGGULAN RPJMD & GEMINI AI (DENGAN EXPONENTIAL BACKOFF) ---
         const presetDescriptions = {
-            smart_green: "Mewujudkan Kabupaten Aceh Tengah yang maju, lestari, dan sejahtera berbasis ekowisata Danau Lut Tawar serta hilirisasi Kopi Arabika Gayo berkelas dunia.",
-            agro_maritime: "Modernisasi ekosistem Kopi Arabika Gayo dari hulu ke hilir dengan pertanian presisi berbasis AI, ketahanan pangan dataran tinggi, dan ekspor langsung.",
-            tech_hub: "Transformasi digital pelayanan publik Takengon Smart City, penguatan konektivitas logistik Bandara Rembele, dan pusat riset agroteknologi.",
-            public_welfare: "Pemerataan pembangunan infrastruktur jalan antar-kecamatan, peningkatan layanan RSUD Datu Beru, dan pelestarian adat budaya Gayo."
+            sapa_digital: "Integrasi Satu Data OPD melalui Portal SAPA Command Center Diskominfo untuk mendongkrak Indeks SPBE dari 1,88 menuju target 4,00 dan pelayanan publik prima.",
+            kopi_gayo: "Hilirisasi 48.300 ha Kopi Arabika Gayo (produksi 37.008 ton), sertifikasi ekspor berkelanjutan tahan iklim, serta penguatan Nilai Tukar Petani (NTP 181,56).",
+            ekowisata_danau: "Penataan KSK Pariwisata Danau Lut Tawar (5.742,10 ha), Tanggul Boom–Mendale, serta perlindungan ekosistem hutan pinus untuk menjaga IKLH di atas 82,24.",
+            kesra_stunting: "Akselerasi penurunan stunting (dari 19,2% menuju target 13,5%) dan kemiskinan (14,27%) melalui layanan kesehatan presisi di 14 Kecamatan & 295 Gampong."
         };
 
         document.getElementById('vision-preset').addEventListener('change', (e) => {
@@ -933,6 +1191,23 @@
             document.getElementById('vision-input').value = desc;
             state.visionText = desc;
         });
+
+        async function fetchGeminiWithBackoff(url, options, retries = 3, delay = 1000) {
+            for (let attempt = 0; attempt <= retries; attempt++) {
+                try {
+                    const res = await fetch(url, options);
+                    if (res.ok) return await res.json();
+                    if (res.status !== 429 && res.status < 500) break;
+                } catch (_) {
+                    // Tangani error jaringan secara senyap untuk retry
+                }
+                if (attempt < retries) {
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+            return null;
+        }
 
         async function triggerMasterAIDirective() {
             const visionInput = document.getElementById('vision-input').value.trim();
@@ -946,69 +1221,72 @@
             btnExec.disabled = true;
             btnExec.classList.add('opacity-70');
 
-            addLog('MASTER-AI', `Menganalisis Visi Bupati: "${visionInput.substring(0, 50)}..."`, 'text-cyan-300');
+            addLog('SAPA-AI', `Orkestrasi Kebijakan Bupati Haili Yoga: "${visionInput.substring(0, 48)}..."`, 'text-cyan-300');
 
-            let spawnedNow = 0;
             const availableSlots = buildingSlots.filter(s => !s.occupied);
             const toBuildCount = Math.min(4, availableSlots.length);
 
             for (let i = 0; i < toBuildCount; i++) {
                 const b = spawnBuilding(availableSlots[i], state.currentTheme, false);
                 if (b) {
-                    spawnedNow++;
-                    addLog('PUPR-GAYO', `Memulai konstruksi ${b.spec.name} di Sektor (${b.slot.x}, ${b.slot.z})`, 'text-amber-300');
+                    addLog('OPD-BOT', `Membangun ${b.spec.name} di grid (${b.slot.x.toFixed(1)}, ${b.slot.z.toFixed(1)})`, 'text-amber-300');
                 }
             }
 
-            try {
-                const prompt = `Kamu adalah Master AI Platform yang mengendalikan bot pemerintahan Kabupaten Aceh Tengah (Takengon & Danau Lut Tawar). Visi Bupati: "${visionInput}". Buat 3 instruksi singkat (maks 10 kata) untuk bot: [PUPR], [DLH], [KOMINFO]. Format JSON array of strings.`;
-                const apiKey = "";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-                const payload = {
-                    contents: [{ role: 'user', parts: [{ text: prompt }] }],
-                    generationConfig: { responseMimeType: "application/json", responseSchema: { type: "ARRAY", items: { type: "STRING" } } }
-                };
+            const prompt = `Kamu adalah Master AI Portal SAPA Kabupaten Aceh Tengah (Bupati Drs. Haili Yoga, M.Si. & Wabup Muchsin Hasan, M.SP., Visi: "Aceh Tengah Islami, Maju, Sejahtera, dan Berkeadilan"). Instruksi: "${visionInput}". Buat 3 perintah singkat (maks 11 kata) untuk bot [DISKOMINFO], [DISBUN-KOPI], [DLH-LUT-TAWAR]. Format JSON array of strings.`;
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ role: 'user', parts: [{ text: prompt }] }],
+                generationConfig: { responseMimeType: "application/json", responseSchema: { type: "ARRAY", items: { type: "STRING" } } }
+            };
 
-                const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-                if (response.ok) {
-                    const result = await response.json();
-                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
-                    if (text) {
-                        const directives = JSON.parse(text);
-                        directives.forEach((dir, idx) => {
-                            setTimeout(() => {
-                                const colors = ['text-amber-300', 'text-emerald-300', 'text-cyan-300'];
-                                addLog('AI-DIRECTIVE', dir, colors[idx % colors.length]);
-                            }, idx * 600);
-                        });
-                    }
-                } else {
-                    throw new Error("Offline AI");
+            const result = await fetchGeminiWithBackoff(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            let directives = null;
+            if (result?.candidates?.[0]?.content?.parts?.[0]?.text) {
+                try {
+                    directives = JSON.parse(result.candidates[0].content.parts[0].text);
+                } catch (_) {
+                    directives = null;
                 }
-            } catch (err) {
-                setTimeout(() => addLog('DLH-BOT', 'Optimalisasi sensor ekosistem Danau Lut Tawar & Hutan Pinus aktif.', 'text-emerald-300'), 400);
-            } finally {
-                thinkingEl.classList.add('hidden');
-                btnExec.disabled = false;
-                btnExec.classList.remove('opacity-70');
-                showToast('Kebijakan AI Dieksekusi', `${state.botCount} bot agents merealisasikan pembangunan fisik.`);
             }
+
+            if (Array.isArray(directives) && directives.length > 0) {
+                directives.forEach((dir, idx) => {
+                    setTimeout(() => {
+                        const colors = ['text-cyan-300', 'text-amber-300', 'text-emerald-300'];
+                        addLog('PORTAL-SAPA', dir, colors[idx % colors.length]);
+                    }, idx * 550);
+                });
+            } else {
+                setTimeout(() => addLog('PORTAL-SAPA', 'Sinkronisasi data 14 Kecamatan & Command Center Diskominfo aktif.', 'text-emerald-300'), 400);
+            }
+
+            thinkingEl.classList.add('hidden');
+            btnExec.disabled = false;
+            btnExec.classList.remove('opacity-70');
+            showToast('Kebijakan RPJMD Dieksekusi', `${state.botCount} bot agents merealisasikan program prioritas.`);
         }
 
         document.getElementById('btn-execute-vision').addEventListener('click', triggerMasterAIDirective);
 
-        // --- KONTROL KAMERA INTERAKTIF (GOOGLE EARTH STYLE) ---
+        // --- KONTROL KAMERA INTERAKTIF & NAVIGASI LANDMARK NYATA ---
         let isDragging = false;
         let prevMouse = { x: 0, y: 0 };
-        let spherical = { radius: 82, theta: Math.PI * 0.7, phi: Math.PI / 3.4 };
+        let spherical = { radius: 88, theta: Math.PI * 0.68, phi: Math.PI / 3.3 };
 
         function updateCameraFromSpherical() {
             spherical.phi = Math.max(0.18, Math.min(Math.PI / 2.1, spherical.phi));
-            spherical.radius = Math.max(20, Math.min(150, spherical.radius));
-            camera.position.x = spherical.radius * Math.sin(spherical.phi) * Math.cos(spherical.theta);
-            camera.position.y = spherical.radius * Math.cos(spherical.phi);
-            camera.position.z = spherical.radius * Math.sin(spherical.phi) * Math.sin(spherical.theta);
-            camera.lookAt(4, 2, 0);
+            spherical.radius = Math.max(18, Math.min(175, spherical.radius));
+            camera.position.x = state.cameraTarget.x + spherical.radius * Math.sin(spherical.phi) * Math.cos(spherical.theta);
+            camera.position.y = state.cameraTarget.y + spherical.radius * Math.cos(spherical.phi);
+            camera.position.z = state.cameraTarget.z + spherical.radius * Math.sin(spherical.phi) * Math.sin(spherical.theta);
+            camera.lookAt(state.cameraTarget);
         }
 
         renderer.domElement.addEventListener('mousedown', (e) => {
@@ -1033,7 +1311,6 @@
             updateCameraFromSpherical();
         }, { passive: true });
 
-        // Touch support
         renderer.domElement.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
                 isDragging = true;
@@ -1052,36 +1329,94 @@
         }, { passive: true });
         renderer.domElement.addEventListener('touchend', () => isDragging = false);
 
-        // Kamera Preset Tombol
+        // Preset Kamera Geospasial
         document.getElementById('cam-earth').addEventListener('click', () => {
             state.cameraMode = 'orbit';
-            spherical.radius = 82;
-            spherical.phi = Math.PI / 3.4;
-            showToast('Kamera: Satelit Orbit', 'Menampilkan lanskap menyeluruh Kabupaten Aceh Tengah.');
-        });
-        document.getElementById('cam-takengon').addEventListener('click', () => {
-            state.cameraMode = 'orbit';
-            spherical.radius = 38;
-            spherical.phi = Math.PI / 2.4;
-            spherical.theta = Math.PI * 0.25;
+            state.cameraTarget.set(4, 2, 0);
+            spherical.radius = 88;
+            spherical.phi = Math.PI / 3.3;
             updateCameraFromSpherical();
-            showToast('Kamera: Kota Takengon', 'Fokus pada pusat pemerintahan dan infrastruktur perkotaan.');
+            showLandmarkInfo(
+                "Kabupaten Aceh Tengah (4.527,58 km²)",
+                "4°31′N, 96°52′E • 14 Kecamatan, 295 Gampong",
+                "Bentang dataran tinggi Bukit Barisan (200–2.930 mdpl), Kota Takengon di sisi barat, dan Danau Lut Tawar di timur.",
+                true
+            );
         });
+
+        document.getElementById('cam-bupati').addEventListener('click', () => {
+            state.cameraMode = 'manual';
+            state.cameraTarget.set(posBupati.x, 3, posBupati.z);
+            spherical.radius = 28;
+            spherical.phi = Math.PI / 2.6;
+            spherical.theta = Math.PI * 0.35;
+            updateCameraFromSpherical();
+            showLandmarkInfo(
+                "Kantor Bupati & Command Center SAPA",
+                "4.6217575°N, 96.8456605°E • Jl. Kol. Yos Sudarso No. 1",
+                "Pusat pemerintahan Bupati Drs. Haili Yoga, M.Si., Pendopo Bupati, Musara Alun, dan Command Center Portal SAPA Diskominfo.",
+                true
+            );
+        });
+
         document.getElementById('cam-lake').addEventListener('click', () => {
             state.cameraMode = 'orbit';
+            state.cameraTarget.set(posLake.x, 0, posLake.z);
             spherical.radius = 48;
-            spherical.phi = Math.PI / 2.8;
-            spherical.theta = Math.PI * 0.9;
+            spherical.phi = Math.PI / 2.9;
+            spherical.theta = Math.PI * 0.85;
             updateCameraFromSpherical();
-            showToast('Kamera: Danau Lut Tawar', 'Meninjau kawasan perairan dan pariwisata lingkar danau.');
+            showLandmarkInfo(
+                "Danau Lut Tawar (5.742,10 Ha)",
+                "4.6112°N, 96.9267°E • Elevasi 1.230 mdpl",
+                "Panjang maks 15,727 km, lebar 4,563 km, kedalaman maks 84,23 m. Outlet tunggal Sungai Peusangan (128 km) & habitat ikan endemik Depik.",
+                true
+            );
         });
+
         document.getElementById('cam-pantan').addEventListener('click', () => {
             state.cameraMode = 'manual';
-            spherical.radius = 95;
-            spherical.phi = 0.22;
-            spherical.theta = Math.PI * 1.25;
+            state.cameraTarget.set(posTakengon.x + 11, 12, posTakengon.z - 20);
+            spherical.radius = 42;
+            spherical.phi = Math.PI / 2.7;
+            spherical.theta = Math.PI * 0.65;
             updateCameraFromSpherical();
-            showToast('Kamera: Bukit Gayo', 'Perspektif dataran tinggi dari pegunungan Bukit Barisan.');
+            showLandmarkInfo(
+                "Puncak Pantan Terong & Buntul Rintis",
+                "1.800 mdpl • ±15 menit dari Takengon",
+                "Gardu pandang utama menghadap lembah Kota Takengon, Danau Lut Tawar, serta kawasan wisata Buntul Rintis (Tensaran, Bebesen).",
+                true
+            );
+        });
+
+        document.getElementById('cam-burni').addEventListener('click', () => {
+            state.cameraMode = 'manual';
+            state.cameraTarget.set(posBurniTelong.x, 18, posBurniTelong.z);
+            spherical.radius = 58;
+            spherical.phi = Math.PI / 2.6;
+            spherical.theta = Math.PI * 0.45;
+            updateCameraFromSpherical();
+            showLandmarkInfo(
+                "Gunung Burni Telong (2.624 mdpl)",
+                "4.7667°N, 96.8219°E • ±17 km Utara Takengon",
+                "Gunung api stratovolcano dengan 3 kawah puncak di lereng selatan Geureudong (secara administratif kini di Kab. Bener Meriah).",
+                true
+            );
+        });
+
+        document.getElementById('cam-kopi').addEventListener('click', () => {
+            state.cameraMode = 'manual';
+            state.cameraTarget.set(posMongalKopi.x, 2, posMongalKopi.z);
+            spherical.radius = 30;
+            spherical.phi = Math.PI / 2.6;
+            spherical.theta = Math.PI * 0.25;
+            updateCameraFromSpherical();
+            showLandmarkInfo(
+                "Sentra Kopi Arabika Gayo (48.300 Ha)",
+                "4.6432°N, 96.8379°E • Kampung Mongal, Bebesen",
+                "Produksi 37.008 ton (2023), Indikasi Geografis (900–1.700 mdpl), eksportir CV. Oro Kopi Gayo & 10 kecamatan sentra.",
+                true
+            );
         });
 
         const btnBoost = document.getElementById('btn-boost-build');
@@ -1097,7 +1432,6 @@
             }
         });
 
-        // Toggle panel mobile
         const toggleBtn = document.getElementById('toggle-panel-btn');
         const panelContent = document.getElementById('panel-content');
         toggleBtn.addEventListener('click', () => {
@@ -1114,10 +1448,13 @@
             requestAnimationFrame(animate);
             const t = time * 0.001;
 
-            aiCore.rotation.y = t * 1.3;
-            aiCore.position.y = 12.2 + Math.sin(t * 2.5) * 0.3;
+            aiCore.rotation.y = t * 1.4;
+            aiCore.position.y = 11.4 + Math.sin(t * 2.5) * 0.28;
 
-            // Kendaraan bergerak
+            clickableBeacons.forEach((b, idx) => {
+                b.rotation.y = t * 1.8 + idx;
+            });
+
             vehicles.forEach(v => {
                 const step = v.speed * v.dir * (state.buildSpeed === 3 ? 1.8 : 1);
                 if (v.axis === 'x') {
@@ -1131,57 +1468,57 @@
                 }
             });
 
-            // Perahu berputar di danau
+            // Perahu wisata bergerak mengikuti elips terotasi sesuai sumbu Danau Lut Tawar (-LAKE_ANGLE)
+            const cosL = Math.cos(-LAKE_ANGLE);
+            const sinL = Math.sin(-LAKE_ANGLE);
             boats.forEach(boat => {
                 boat.angle += boat.speed * 0.01 * (state.buildSpeed === 3 ? 1.6 : 1);
-                const nx = 26 + Math.cos(boat.angle) * boat.radiusX;
-                const nz = 2 + Math.sin(boat.angle) * boat.radiusZ;
-                boat.mesh.lookAt(nx, -0.05, nz);
-                boat.mesh.position.set(nx, -0.05 + Math.sin(t * 3 + boat.angle) * 0.03, nz);
+                const lx = Math.cos(boat.angle) * boat.radiusX;
+                const lz = Math.sin(boat.angle) * boat.radiusZ;
+                const nx = posLake.x + (lx * cosL - lz * sinL);
+                const nz = posLake.z + (lx * sinL + lz * cosL);
+                boat.mesh.lookAt(nx, -0.06, nz);
+                boat.mesh.position.set(nx, -0.06 + Math.sin(t * 3 + boat.angle) * 0.03, nz);
             });
 
-            // Auto spawn proyek pembangunan
-            if (t - lastAutoSpawn > (9 / state.buildSpeed)) {
+            if (t - lastAutoSpawn > (8.5 / state.buildSpeed)) {
                 lastAutoSpawn = t;
                 const unbuilt = buildingSlots.filter(s => !s.occupied);
                 if (unbuilt.length > 0 && buildings.filter(b => !b.completed).length < 5) {
                     const newB = spawnBuilding(unbuilt[0], state.currentTheme, false);
-                    if (newB) addLog('AUTO-DEV', `Bot mendirikan ${newB.spec.name} sesuai RPJMD.`, 'text-slate-300');
+                    if (newB) addLog('RPJMD-DEV', `Bot mendirikan ${newB.spec.name}.`, 'text-slate-300');
                 }
             }
 
-            // Update progres bangunan
             const activeConstructions = [];
-            let completedCount = 0;
-            let parkCount = 0;
-
             buildings.forEach(b => {
-                if (b.spec.isPark) parkCount++;
                 if (!b.completed) {
                     activeConstructions.push(b);
-                    b.progress += 0.0025 * state.buildSpeed * (state.botCount / 180);
+                    b.progress += 0.0028 * state.buildSpeed * (state.botCount / 220);
                     if (b.progress >= 1.0) {
                         b.progress = 1.0;
                         b.completed = true;
-                        state.budget = +(state.budget + 0.09).toFixed(2);
-                        addLog('SELESAI', `${b.spec.name} beroperasi penuh! Pendapatan daerah meningkat.`, 'text-emerald-400');
+                        state.spbe = Math.min(4.0, +(state.spbe + 0.06).toFixed(2));
+                        state.ipm = Math.min(84.23, +(state.ipm + 0.04).toFixed(2));
+                        state.iklh = Math.min(85.0, +(state.iklh + 0.12).toFixed(1));
+                        state.poverty = Math.max(8.15, +(state.poverty - 0.08).toFixed(2));
+                        state.coffeeTon += 145;
+
+                        document.getElementById('stat-spbe').innerHTML = `${state.spbe.toFixed(2)} <span class="text-[9px] text-slate-400">/ 4.0</span>`;
+                        document.getElementById('stat-ipm').textContent = state.ipm.toFixed(2);
+                        document.getElementById('stat-iklh').textContent = state.iklh.toFixed(1);
+                        document.getElementById('stat-poverty').textContent = `${state.poverty.toFixed(2)}%`;
+                        document.getElementById('stat-coffee').textContent = `${state.coffeeTon.toLocaleString('id-ID')} Ton`;
+
+                        addLog('CAPAIAN-IKU', `${b.spec.name} aktif! Indeks SPBE naik ke ${state.spbe.toFixed(2)}.`, 'text-emerald-400');
                     }
                     b.group.scale.y = b.progress;
-                } else {
-                    completedCount++;
                 }
             });
 
-            statBuildings.textContent = `${completedCount} Unit`;
-            const ecoScore = Math.min(99, Math.round(72 + (parkCount * 2.2)));
-            statEco.textContent = `${ecoScore}%`;
-            statBudget.textContent = `Rp ${state.budget.toFixed(2)} T`;
-
-            // Reset laser lines
             let laserIdx = 0;
             laserLines.forEach(l => l.visible = false);
 
-            // Update Swarm Bot Agents
             for (let i = 0; i < MAX_BOTS; i++) {
                 const bot = bots[i];
                 if (i >= state.botCount) {
@@ -1196,9 +1533,9 @@
                     const targetB = activeConstructions[i % activeConstructions.length];
                     const orbitAngle = t * 2.2 + bot.phase;
                     bot.target.set(
-                        targetB.slot.x + Math.cos(orbitAngle) * 3.2,
-                        (targetB.slot.y || 0) + (targetB.targetHeight * targetB.progress) + 1.4,
-                        targetB.slot.z + Math.sin(orbitAngle) * 3.2
+                        targetB.slot.x + Math.cos(orbitAngle) * 3.0,
+                        (targetB.slot.y || 0) + (targetB.targetHeight * targetB.progress) + 1.3,
+                        targetB.slot.z + Math.sin(orbitAngle) * 3.0
                     );
 
                     if (bot.pos.distanceTo(bot.target) < 5.5 && laserIdx < laserLines.length) {
@@ -1211,18 +1548,18 @@
                     }
                 } else {
                     if (bot.pos.distanceTo(bot.target) < 2.5) {
-                        const tx = -44 + Math.random() * 92;
-                        const tz = -28 + Math.random() * 56;
+                        const tx = -42 + Math.random() * 88;
+                        const tz = -32 + Math.random() * 64;
                         const elev = Math.max(0, getAcehTengahElevation(tx, tz));
                         bot.target.set(tx, elev + bot.yOffset, tz);
                     }
                 }
 
-                const dir = new THREE.Vector3().subVectors(bot.target, bot.pos);
-                const dist = dir.length();
+                reusableDir.subVectors(bot.target, bot.pos);
+                const dist = reusableDir.length();
                 if (dist > 0.1) {
-                    dir.normalize();
-                    bot.pos.addScaledVector(dir, bot.speed * state.buildSpeed);
+                    reusableDir.normalize();
+                    bot.pos.addScaledVector(reusableDir, bot.speed * state.buildSpeed);
                 }
 
                 const hoverY = bot.pos.y + Math.sin(t * 4 + bot.phase) * 0.15;
@@ -1235,7 +1572,7 @@
             botInstancedMesh.instanceMatrix.needsUpdate = true;
 
             if (state.cameraMode === 'orbit' && !isDragging) {
-                spherical.theta += 0.0016;
+                spherical.theta += 0.0014;
                 updateCameraFromSpherical();
             }
 
